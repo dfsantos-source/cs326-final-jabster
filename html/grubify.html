@@ -13,32 +13,36 @@
   </head>
   <body>
     <div class="navbar">Navbar</div>
-    <div class="grubify-wrapper">
-      <h1>What are you grubbing today?</h1>
-      <button>Grubify!</button>
+    <div class="grubify-wrapper container text-center">
+      <div class="mt-4 pt-5 pb-5">
+        <p class="mt-4 h1">What are you grubbing today?</p>
+        <button type="button" class="mt-4 btn btn-primary">Grubify!</button>
+      </div>
   
       <!-- TODO: conditionally render this later on with functionality -->
       <!-- <h1>Not in the mood?</h1>
       <button>Grubify again!</button> -->
   
-      <div class="picky-wrapper">
-        <h3>Feeling a little bit picky?</h3>
-        <label>Dietary Restriction</label>
-        <select>
-          <option value="vegetarian">Vegetarian</option>
-          <option value="vegan">Vegan</option>
-          <option value="nut-free">Nut-free</option>
-          <option value="pescatarian">Pescatarian</option>
-          <option value="keto">Keto</option>
-        </select>
-        <label>Cuisine</label>
-        <select>
-          <option value="indian">Indian</option>
-          <option value="asian">Asian</option>
-          <option value="italian">Italian</option>
-          <option value="mexican">Mexican</option>
-          <option value="japanese">Japanese</option>
-        </select>
+      <div class="picky-wrapper mt-4 card text-center w-50 container">
+        <div class="card-body">
+          <p class="mb-4 h3">Feeling a little bit picky?</p>
+          <label class="h6">Dietary Restriction</label>
+          <select>
+            <option value="vegetarian">Vegetarian</option>
+            <option value="vegan">Vegan</option>
+            <option value="nut-free">Nut-free</option>
+            <option value="pescatarian">Pescatarian</option>
+            <option value="keto">Keto</option>
+          </select>
+          <label class="h6">Cuisine</label>
+          <select>
+            <option value="indian">Indian</option>
+            <option value="asian">Asian</option>
+            <option value="italian">Italian</option>
+            <option value="mexican">Mexican</option>
+            <option value="japanese">Japanese</option>
+          </select>
+        </div>
       </div>
     </div>
   </body>
