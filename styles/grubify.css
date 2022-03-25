@@ -3,8 +3,9 @@
 }
 
 .picky-wrapper {
-    background-color: rgb(179, 179, 179);
+    background-color: rgb(218, 218, 218);
     max-width: 50%;
+    border-radius: 25px;
 }
 
 .picky-card {
@@ -20,9 +21,23 @@
     padding: 14px 30px;
     text-align: center;
     text-decoration: none;
-    border-radius: 14px;
+    border-radius: 20px;
     border: none;
     color: white;
     display: inline-block;
     font-size: 16px;
   }
+
+.picky-input-table {
+    text-align: left !important;
+    border-collapse: separate;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2.5em;
+    border-spacing: 5em 0em;
+}
+
+td {
+    min-width: max-content;
+    padding: 0 10px;
+}
