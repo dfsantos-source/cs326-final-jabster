@@ -1,0 +1,28 @@
+.grubify-wrapper {
+    text-align: center;
+}
+
+.picky-wrapper {
+    background-color: rgb(179, 179, 179);
+    max-width: 50%;
+}
+
+.picky-card {
+    max-width: 100%;
+}
+
+.primary-color {
+    color: rgb(255, 108, 108);
+}
+
+.button {
+    background-color: rgb(255, 108, 108);
+    padding: 14px 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 14px;
+    border: none;
+    color: white;
+    display: inline-block;
+    font-size: 16px;
+  }
