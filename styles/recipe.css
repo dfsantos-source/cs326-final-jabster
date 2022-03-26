@@ -1,0 +1,92 @@
+.title {
+  text-align: center;
+  font-size: 5em;
+}
+
+.header {
+  text-align: center;
+  margin-top: 2em;
+}
+
+.direction-title {
+  text-align: left;
+  margin-left: 1.5em;
+}
+
+.ingredient-title {
+  text-align: center;
+}
+
+.tag-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.tag {
+  background-color: #fd6868;
+  max-width: max-content;
+  padding: 3px 10px 3px 10px;
+  border-radius: 20px;
+  color: white;
+}
+
+.ingredients {
+  text-align: center;
+  max-width: max-content;
+  margin-top: 2%;
+  min-width: 30%;
+  /* background-color: #a6a8ad; */
+  padding: 2%;
+  padding-left: 7em;
+  padding-right: 7em;
+  border-radius: 3em;
+  font-size: large;
+}
+
+.directions {
+  text-align: center;
+  max-width: max-content;
+  margin-top: 2%;
+  min-width: 30%;
+  /* background-color: #a6a8ad; */
+  padding: 2%;
+  padding-left: 7em;
+  padding-right: 7em;
+  border-radius: 3em;
+  font-size: large;
+}
+
+.direction-ls {
+  display: table;
+  margin: 0 auto;
+  list-style-position: inside;
+  max-width: max-content;
+  text-align: left;
+}
+
+.ingredient-ls {
+  max-width: max-content;
+  list-style-type: none;
+  text-align: left;
+  padding: 0 !important;
+  margin: 0 !important;
+  /* margin: 0; */
+}
+
+.recipe-wrapper {
+  background-color: #f9f9fb;
+  max-width: max-content;
+  border-radius: 3%;
+  margin-bottom: 2em;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+li {
+  margin-top: 5px;
+}
+
+img {
+  border-radius: 40px;
+  margin-bottom: 3em;
+  margin-top: 1em;
+}
