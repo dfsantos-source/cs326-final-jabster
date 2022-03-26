@@ -1,0 +1,78 @@
+.navbar{
+    width: 100%;
+    border-bottom: 4px solid rgb(242, 236, 236);
+    font-size: 1.1em;
+    background: rgb(249, 246, 246);
+    padding: 15px 20px 15px 8px;
+    font-weight: 600;
+}
+
+.navbar > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navbar > div > *:not(:first-child) {
+    margin-left: 20px;
+}
+
+.title{
+    text-align: center;
+    margin-top: 1.5em;
+    font-size: 3.2em;
+}
+
+.slideshow{
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    height: 600px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.moto{
+    height: 100px;
+    /*margin-top: 550px;*/
+    margin-bottom: 1.5em;
+    font-size: large;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.get-started-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    margin-bottom: 50px;
+}
+
+.tag-lines{
+    margin-top: 200px;
+    margin-bottom: 50px;
+    margin-left: 5%;
+}
+
+.main-tag{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.filter{
+    margin-top: 100px;
+    margin-bottom: 400px;
+}
+
+.plan{
+    margin-bottom: 80px;
+}
+
+.rate{
+    margin-bottom: 80px;
+}
+
+img{
+    float:right;
+}
