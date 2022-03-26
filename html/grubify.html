@@ -13,55 +13,58 @@
   </head>
   <body class="grubify-page">
     <div class="navbar">Navbar</div>
-    <div class="grubify-wrapper container">
-      <div class="mt-4 pt-5 pb-4">
-        <p class="mt-4 h1">What are you grubbing today?</p>
-      </div>
-  
-      <!-- TODO: conditionally render this later on with functionality -->
-      <!-- <h1>Not in the mood?</h1>
-      <button>Grubify again!</button> -->
-  
-      <div class="picky-wrapper mt-3 container pt-5 pb-5">
-        <div class="picky-card">
-          <p class="mb-4 h3">Feeling a little bit picky?</p>
-          <div class="picky-input">
-            <div>
-              <table class="picky-input-table">
-                <tr>
-                  <td><label class="h5">Dietary Restriction</label></td>
-                  <td><label class="h5">Cuisine</label></td>
-                </tr>
-                <tr>
-                  <td>
-                    <select>
-                      <option value="vegetarian">None</option>
-                      <option value="vegetarian">Vegetarian</option>
-                      <option value="vegan">Vegan</option>
-                      <option value="nut-free">Nut-free</option>
-                      <option value="pescatarian">Pescatarian</option>
-                      <option value="keto">Keto</option>
-                    </select>
-                  </td>
-                  <td>
-                    <select>
-                      <option value="vegetarian">None</option>
-                      <option value="indian">Indian</option>
-                      <option value="asian">Asian</option>
-                      <option value="italian">Italian</option>
-                      <option value="mexican">Mexican</option>
-                      <option value="japanese">Japanese</option>
-                    </select>
-                  </td>
-                </tr>
-              </table>
-            </div>
-            <div>
+    <div class="grubify-box">
+      <div class="grubify-wrapper container">
+        <div class="mt-4 pt-5 pb-4">
+          <p class="mt-4 h1 grubbing-title">What are you grubbing today?</p>
+          <img class="mt-5" src="../public/images/undraw_eating_together_re_ux62.svg" width="400" height="300">
+        </div>
+    
+        <!-- TODO: conditionally render this later on with functionality -->
+        <!-- <h1>Not in the mood?</h1>
+        <button>Grubify again!</button> -->
+    
+        <div class="picky-wrapper mt-3 container pt-5 pb-5">
+          <div class="picky-card">
+            <p class="mb-4 h3">Feeling a little bit picky?</p>
+            <div class="picky-input">
+              <div>
+                <table class="picky-input-table">
+                  <tr>
+                    <td><label class="h5">Dietary Restriction</label></td>
+                    <td><label class="h5">Cuisine</label></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <select>
+                        <option value="vegetarian">None</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="vegan">Vegan</option>
+                        <option value="nut-free">Nut-free</option>
+                        <option value="pescatarian">Pescatarian</option>
+                        <option value="keto">Keto</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select>
+                        <option value="vegetarian">None</option>
+                        <option value="indian">Indian</option>
+                        <option value="asian">Asian</option>
+                        <option value="italian">Italian</option>
+                        <option value="mexican">Mexican</option>
+                        <option value="japanese">Japanese</option>
+                      </select>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div>
+              </div>
             </div>
           </div>
         </div>
+        <button type="button" class="mt-5 h5 button">Grubify!</button>
       </div>
-      <button type="button" class="mt-5 h5 button">Grubify!</button>
     </div>
   </body>
 </html>

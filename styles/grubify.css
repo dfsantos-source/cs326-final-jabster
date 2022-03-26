@@ -2,10 +2,27 @@
     text-align: center;
 }
 
-.picky-wrapper {
-    background-color: rgb(218, 218, 218);
+.grubbing-title {
+    font-size: 3em;
+}
+
+.grubify-box {
+    background-color: rgb(255, 149, 149);
+    box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
+    border-radius: 5px;
+    padding-bottom: 3em;
     max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6em;
+    margin-bottom: 20%;
+}
+
+.picky-wrapper {
+    background-color: #f9f9fb;
+    max-width: 80%;
     border-radius: 25px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .picky-card {
@@ -17,13 +34,14 @@
 }
 
 .button {
-    background-color: rgb(255, 108, 108);
+    /* background-color: rgb(255, 108, 108); */
+    background-color: rgb(245, 90, 90);
     padding: 14px 30px;
     text-align: center;
     text-decoration: none;
     border-radius: 20px;
     border: none;
-    color: white;
+    color: #ffffff;
     display: inline-block;
     font-size: 16px;
   }
