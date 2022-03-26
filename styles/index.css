@@ -1,16 +1,15 @@
 .title{
     text-align: center;
     margin-top: 1.5em;
-    font-size: 3.2em;
+    font-size: 5em;
 }
 
 .slideshow{
-    border: 1px solid black;
     display: flex;
     justify-content: center;
-    height: 600px;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
 }
 
 .moto{
@@ -33,7 +32,6 @@
 .tag-lines{
     margin-top: 200px;
     margin-bottom: 50px;
-    margin-left: 5%;
 }
 
 .main-tag{
@@ -43,17 +41,32 @@
 
 .filter{
     margin-top: 100px;
-    margin-bottom: 400px;
+    margin-bottom: 300px;
+    margin-left: 5%;
+    max-width: 35%;
+}
+
+.plan-wrapper{
+    background-color: rgb(255, 149, 149);
 }
 
 .plan{
-    margin-bottom: 80px;
+    margin-bottom: 200px;
+    margin-left: 5%;
+    max-width: 35%;
+
 }
 
 .rate{
     margin-bottom: 80px;
+    margin-left: 5%;
+    max-width: 35%;
+
 }
 
-img{
-    float:right;
+
+.photos{
+    width: 500px;
+    padding: 1px;
+    float: right;
 }
