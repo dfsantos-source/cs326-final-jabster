@@ -1,3 +1,12 @@
+.primary-color {
+    color: rgb(255, 108, 108);
+}
+
+td {
+    min-width: max-content;
+    padding: 0 10px;
+}
+
 .grubify-wrapper {
     text-align: center;
 }
@@ -29,8 +38,17 @@
     max-width: 100%;
 }
 
-.primary-color {
-    color: rgb(255, 108, 108);
+.picky-label {
+    font-size: 1.3em;
+}
+
+.picky-input-table {
+    text-align: left !important;
+    border-collapse: separate;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2.5em;
+    border-spacing: 5em 0em;
 }
 
 .button {
@@ -44,24 +62,6 @@
     display: inline-block;
     font-size: 16px;
   }
-
-.picky-input-table {
-    text-align: left !important;
-    border-collapse: separate;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2.5em;
-    border-spacing: 5em 0em;
-}
-
-td {
-    min-width: max-content;
-    padding: 0 10px;
-}
-
-.picky-label {
-    font-size: 1.3em;
-}
 
 .margin-top-large {
     margin-top: 1em;
