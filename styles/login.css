@@ -1,0 +1,45 @@
+.container{
+    justify-content: center; 
+    align-items: center;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+}
+
+.loginbox{
+    margin: auto;
+    height:500px;
+    width:450px;
+    margin-top: 10%;
+    border-radius: 5%;
+    background-color: rgb(218, 218, 218);
+}
+
+.title{
+    padding-top: 5%;
+    font-size: 250%;
+    color: rgb(255, 108, 108);
+}
+
+.form{
+    padding-top: 5%;
+}
+
+.form-field{
+    padding: 2.5%;
+    box-sizing: border-box;
+}
+
+.subheading{
+    padding-bottom: 5%;
+}
+
+.submit-button{
+    margin: 2.5%;
+    width: 25%;
+    height: 25%;
+}
+
+.signup{
+    margin-top: 18%;
+}
