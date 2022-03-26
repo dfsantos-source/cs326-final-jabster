@@ -1,0 +1,75 @@
+.profile {
+  margin-left: 1.5em;
+  margin-top: 3em;
+}
+
+.user-wrapper {
+  display: grid;
+  grid-template-columns: 20% 75%;
+}
+
+.user-info {
+  background-color: rgb(114, 114, 121);
+  margin-left: 3em;
+  height: 35em;
+  text-align: center;
+  padding-top: 3em;
+  border-radius: 20px;
+}
+
+.profile-pic {
+  border-radius: 50%;
+}
+
+.user-food {
+  margin-left: 3em;
+  height: 45em;
+  background-color: rgb(114, 114, 121);
+  border-radius: 20px;
+  padding-left: 2em;
+}
+
+.username {
+  margin-top: -1em;
+}
+
+.user-food-title {
+  margin-top: 1em;
+}
+
+.change-button {
+  border-style: none;
+  width: 60%;
+  height: 3em;
+  margin-top: 2em;
+  background-color: rgb(250, 159, 159);
+  border-radius: 20px;
+}
+
+.food-card {
+  width: 12em;
+  height: 15em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.card-title {
+  margin-top: 1em;
+}
+
+.card-img {
+  border-radius: 10px 10px 0 0;
+}
+
+.card-wrapper {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  margin-top: 1em;
+}
+
+.card-text {
+  margin-top: -0.3em;
+}

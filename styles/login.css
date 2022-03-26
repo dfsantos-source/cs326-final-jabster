@@ -1,45 +1,47 @@
-.container{
-    justify-content: center; 
-    align-items: center;
-    align-self: center;
-    justify-self: center;
-    text-align: center;
+.container {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.loginbox{
-    margin: auto;
-    height:500px;
-    width:450px;
-    margin-top: 10%;
-    border-radius: 5%;
-    background-color: rgb(218, 218, 218);
+.loginbox {
+  margin: auto;
+  height: 500px;
+  width: 450px;
+  margin-top: 10%;
+  border-radius: 5%;
+  background-color: rgb(218, 218, 218);
 }
 
-.title{
-    padding-top: 5%;
-    font-size: 250%;
-    color: rgb(255, 108, 108);
+.title {
+  padding-top: 5%;
+  font-size: 250%;
+  color: rgb(255, 108, 108);
 }
 
-.form{
-    padding-top: 5%;
+.form {
+  padding-top: 5%;
 }
 
-.form-field{
-    padding: 2.5%;
-    box-sizing: border-box;
+.form-field {
+  padding: 2.5%;
+  box-sizing: border-box;
 }
 
-.subheading{
-    padding-bottom: 5%;
+.subheading {
+  padding-bottom: 5%;
 }
 
-.submit-button{
-    margin: 2.5%;
-    width: 25%;
-    height: 25%;
+.submit-button {
+  margin: 2.5%;
+  width: 30%;
+  height: 2.5em;
+  border-style: none;
+  background-color: rgb(245, 90, 90);
+  color: white;
+  border-radius: 20px;
 }
 
-.signup{
-    margin-top: 18%;
+.signup {
+  margin-top: 18%;
 }

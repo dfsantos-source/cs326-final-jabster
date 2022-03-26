@@ -11,9 +11,11 @@
 .direction-title {
   text-align: left;
   margin-left: 1.5em;
+  margin-bottom: -0.2em;
 }
 
 .ingredient-title {
+  margin-top: 0.5em;
   text-align: center;
 }
 
@@ -82,7 +84,7 @@
 }
 
 li {
-  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .recipe-img {
