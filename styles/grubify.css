@@ -14,7 +14,7 @@
     max-width: 50%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 6em;
+    margin-top: 4em;
     margin-bottom: 20%;
 }
 
@@ -34,7 +34,6 @@
 }
 
 .button {
-    /* background-color: rgb(255, 108, 108); */
     background-color: rgb(245, 90, 90);
     padding: 14px 30px;
     text-align: center;
@@ -58,4 +57,28 @@
 td {
     min-width: max-content;
     padding: 0 10px;
+}
+
+.picky-label {
+    font-size: 1.3em;
+}
+
+.margin-top-large {
+    margin-top: 1em;
+}
+
+.margin-bottom-large {
+    margin-bottom: 1em;
+}
+
+.margin-top-extra-large {
+    margin-top: 2em;
+}
+
+.padding-top-large {
+    padding-top: 3em;
+} 
+
+.padding-bottom-large {
+    padding-bottom: 3em;
 }
