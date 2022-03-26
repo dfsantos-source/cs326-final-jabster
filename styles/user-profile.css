@@ -8,9 +8,12 @@
   grid-template-columns: 20% 75%;
 }
 
-.user-info {
+.box {
   background-color: rgb(114, 114, 121);
   margin-left: 3em;
+  border-radius: 20px;
+}
+.user-info {
   height: 35em;
   text-align: center;
   padding-top: 3em;
@@ -24,8 +27,6 @@
 .user-food {
   margin-left: 3em;
   height: 45em;
-  background-color: rgb(114, 114, 121);
-  border-radius: 20px;
   padding-left: 2em;
 }
 
