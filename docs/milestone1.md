@@ -53,8 +53,15 @@ This page shows the profile for the signed in user, where their favorite recipes
 ![Index](./wireframes/index-1-html.png)
 ![Index](./wireframes/index-2-html.png)
 ![Index](./wireframes/index-3-html.png)
+![Index](./wireframes/index-4-html.png)
 This page serves as an "about us" section detailing how the application works and why it was developed.
 
+## Division of Labor
+
+Aayush - Designed Recipe and user profile page wireframe and implemented html/css for those pages
+Dane - Designed Grubify filter page wireframe and implemented html/css for those pages
+Ali - Designed Login and Register page wireframes and implemented html/css for those pages
+Nolan - Designed Homepage wireframe and implemented html/css for those pages
 
 
 
