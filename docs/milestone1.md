@@ -9,7 +9,7 @@
 
 ## Wireframes
 
-![Homepage](../public/docs/wireframes/Homepage.png)
+![Homepage](./wireframes/Homepage.png)
 Main homepage. Users will be welcomed to the main page when entering the site. As users scroll down, they'll be welcomed by three different features of the web app with images to compliment them. grubify button at the bottom to start the process.
 
 ![signin](../public/docs/wireframes/User Login.png)
