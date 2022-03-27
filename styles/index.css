@@ -26,7 +26,13 @@
     align-items: center;
     justify-content: center;
     width: 150px;
-    margin-bottom: 50px;
+    margin-bottom: 5%;
+    border-style: none;
+    border-radius: 10px;
+    width: 10em;
+    height: 3em;
+    background-color: rgb(255, 149, 149); 
+    font-size: 1.3em;  
 }
 
 .tag-lines{
@@ -40,33 +46,63 @@
 }
 
 .filter{
-    margin-top: 100px;
-    margin-bottom: 300px;
+    margin-top: 5%;
     margin-left: 5%;
     max-width: 35%;
 }
 
 .plan-wrapper{
-    background-color: rgb(255, 149, 149);
+    background-color: #f9f9fb;
+    display: flex;
+    flex-direction: row;
+    margin-top: 5%;
+    margin-bottom: 100px;
+    padding-top: 3%;
+    padding-bottom: 3%
 }
 
 .plan{
-    margin-bottom: 200px;
-    margin-left: 5%;
+    /*margin-bottom: 200px;*/
     max-width: 35%;
+    margin-left: 13%;
+    margin-right: 10%;
+    margin-top:6%;
 
+}
+
+.rate-wrapper{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10%;
 }
 
 .rate{
     margin-bottom: 80px;
-    margin-left: 5%;
+    margin-left: 12%;
     max-width: 35%;
-
+    margin-top: 10%;
+    margin-right: 5%
 }
 
 
 .photos{
-    width: 500px;
+    width: 40%;
     padding: 1px;
-    float: right;
+    /*float: right;*/
+}
+
+.filter-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.cooking{
+    width: 25% ;
+    margin-left: 13%;
+}
+
+.wording{
+    font-size: 2.3em;
 }
