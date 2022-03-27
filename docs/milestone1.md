@@ -18,7 +18,7 @@ Sign in page. User must input the email and password they used to register in or
 ![register](./wireframes/User-Register.png)
 Registration page. User must input a username, their desired email, and a password as well as a password confirmation in four seperate input boxes to register.
 
-![User-profile](./wireframes/User-profile.png)
+![User-profile](./wireframes/User-Profile.png)
 User profile page. This page will have the users account information with options to change their username or password. The page will also display the users saved "Favorite Recipies" as well as a "Shopping Cart" filled with ingrediants they need for desired recipies.
 
 ![grubbing-filter](./wireframes/grubbing%20filter.png)
