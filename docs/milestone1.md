@@ -32,3 +32,31 @@ Results. The user will be displayed a list of possible options based on the filt
 
 ![Recipies](./wireframes/Recipe.png)
 Recipe. The web program will display the user's desired dish's ingrediants and directions on how to prep and cook the meal.
+
+## HTML Mockups
+
+![Grubify](./wireframes/grubify-html.png)
+This page gives the user randomized recipes, with an option to filter by various dietary restrictions and cuisines.
+
+![Login](./wireframes/login-html.png)
+This page is where the user logs into their existing Grubify account.
+
+![Register](./wireframes/register-html.png)
+This page is where the user signs up for a Grubify account which gives them access to save recipes and add items to their shopping cart. 
+
+![Recipe](./wireframes/recipe-html.png)
+This page shows the recipe instructions and ingredients for either a randomized recipe given to the user or a saved recipe.
+
+![User-Profile](./wireframes/user-profile-html.png)
+This page shows the profile for the signed in user, where their favorite recipes are saved.
+
+![Index](./wireframes/index-1-html.png)
+![Index](./wireframes/index-2-html.png)
+![Index](./wireframes/index-3-html.png)
+This page serves as an "about us" section detailing how the application works and why it was developed.
+
+
+
+
+
+
