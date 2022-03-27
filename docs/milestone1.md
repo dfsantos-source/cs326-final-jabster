@@ -1,10 +1,11 @@
 ## Data Interactions
-- Users will be able to receive a random dish that they can choose to make. 
+
+- Users will be able to receive a random dish that they can choose to make.
 - Users will be able to input dietary restrictions and preferences, if needed
 - Users will be able to see ingredients and direction to cook the food for every recipe
 - Users will be able to add and remove ingrediants from their shopping cart
 - Users will be able to add and remove recipes to their favorite recipes list
-- Users will be able to like and dislike recipes, and users will be able to see the amount of likes and dislikes for each recipe. 
+- Users will be able to like and dislike recipes, and users will be able to see the amount of likes and dislikes for each recipe.
 - Users will be able to view and change their profile
 
 ## Wireframes
@@ -42,7 +43,7 @@ This page gives the user randomized recipes, with an option to filter by various
 This page is where the user logs into their existing Grubify account.
 
 ![Register](./wireframes/register-html.png)
-This page is where the user signs up for a Grubify account which gives them access to save recipes and add items to their shopping cart. 
+This page is where the user signs up for a Grubify account which gives them access to save recipes and add items to their shopping cart.
 
 ![Recipe](./wireframes/recipe-html.png)
 This page shows the recipe instructions and ingredients for either a randomized recipe given to the user or a saved recipe.
@@ -58,12 +59,7 @@ This page serves as an "about us" section detailing how the application works an
 
 ## Division of Labor
 
-Aayush - Designed Recipe and user profile page wireframe and implemented html/css for those pages
-Dane - Designed Grubify filter page wireframe and implemented html/css for those pages
-Ali - Designed Login and Register page wireframes and implemented html/css for those pages
-Nolan - Designed Homepage wireframe and implemented html/css for those pages
-
-
-
-
-
+-Aayush - Designed Recipe and user profile page wireframe and implemented html/css for those pages
+-Dane - Designed Grubify filter page wireframe and implemented html/css for those pages
+-Ali - Designed Login and Register page wireframes and implemented html/css for those pages
+-Nolan - Designed Homepage wireframe and implemented html/css for those pages
