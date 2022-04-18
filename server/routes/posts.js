@@ -1,4 +1,5 @@
 import express from 'express'
+import { faker } from '@faker-js/faker';
 
 const app = express()
 const router = express.Router()
@@ -16,17 +17,18 @@ const router = express.Router()
 // create a post
 router.post('/create', (req, res) => {
     const post = {
-        id: 2,
-        name: 'Alfredo',
-        user_id: 21,
-        cuisine: 'Italian',
-        likes: 21,
-        dislikes: 0,
-        description: 'Look at this amazing alfredo.',
-        directions: '1 boil water, 2 add sauce, bake in oven for 300 degrees 30 min'
+        id: faker.random.number({'max':100}),
+        name: req.body.name,
+        user_id: faker.random.number({'max':100}),
+        cuisine: req.body.cuisine,
+        likes: faker.random.number({'max':100}),
+        dislikes: faker.random.number({'max':100}),
+        description: req.body.description,
+        directions: req.body.directions,
+        ingredients: req.body.ingredients
     }
     try {
-        res.json({post})
+        res.json(post)
     }
     catch {
         res.status(404).json({ err: 'Error creating post' });
@@ -35,18 +37,8 @@ router.post('/create', (req, res) => {
 
 // update a post id
 router.put('/update/:postId', (req, res) => {
-    const post = {
-        id: 2,
-        name: 'Alfredo',
-        user_id: 21,
-        cuisine: 'Italian',
-        likes: 21,
-        dislikes: 0,
-        description: 'Look at this amazing alfredo.',
-        directions: '1 boil water, 2 add sauce, bake in oven for 300 degrees 30 min'
-    }
     try {
-        res.json(post)
+        res.json({post: req.body, message: "Succesfully updated post"})
     }
     catch {
         res.status(404).json({ err: 'Error updating post' });
@@ -66,24 +58,26 @@ router.delete('/delete/:postId', (req, res) => {
 // get all posts
 router.get('/get/all', (req, res) => {
     const post1 = {
-        id: 2,
+        id: faker.random.number({'max':100}),
         name: 'Alfredo',
-        user_id: 21,
+        user_id: faker.random.number({'max':100}),
         cuisine: 'Italian',
-        likes: 21,
-        dislikes: 0,
+        likes: faker.random.number({'max':100}),
+        dislikes: faker.random.number({'max':100}),
         description: 'Look at this amazing alfredo.',
-        directions: '1 boil water, 2 add sauce, bake in oven for 300 degrees 30 min'
+        directions: '1 boil water, 2 add sauce, bake in oven for 300 degrees 30 min',
+        ingredients: [`{id: 1, name: 'Peas', amount:'1 bag', post_id:2}, {id: 3, name: 'Corn', amount:'1 can', post_id:2}}`]
     }
     const post2 = {
-        id: 3,
+        id: faker.random.number({'max':100}),
         name: 'Spaghetti',
-        user_id: 21,
+        user_id: faker.random.number({'max':100}),
         cuisine: 'Italian',
-        likes: 21,
-        dislikes: 0,
+        likes: faker.random.number({'max':100}),
+        dislikes: faker.random.number({'max':100}),
         description: 'Look at this amazing spaghetti.',
-        directions: '1 boil water, 2 add sauce, add meatballs, serve'
+        directions: '1 boil water, 2 add sauce, add meatballs, serve',
+        ingredients: [`{id: 1, name: 'Peas', amount:'1 bag', post_id:2}, {id: 3, name: 'Corn', amount:'1 can', post_id:2}}`]
     }
     try {
         res.json([post1, post2])
