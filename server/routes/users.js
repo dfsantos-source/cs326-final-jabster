@@ -20,12 +20,12 @@ router.post('/register', (req, res) => {
         res.status(404).json("registration failed")
     }
     else {
-        res.status(200).json("User registered successfully");
+        res.status(200).json({ message: "user registered successfully", "user": req.body });
     }
 })
 
-router.get("/:id", (req, res) => {
-    const id = req.params.id;
+router.get("/get/:userId", (req, res) => {
+    const id = req.params.userId;
     if (id !== undefined) {
         const user = {
             id: id,
@@ -39,12 +39,12 @@ router.get("/:id", (req, res) => {
     }
 })
 
-router.put('update/:id', (req, res) => {
-    let id = req.params.id;
-    const body = req.body
+router.put('/update/:userId', (req, res) => {
+    let id = req.params.userId;
+    const body = req.body;
 
     if (id !== undefined && body !== undefined) {
-        res.status(200).json("User updated successfully")
+        res.status(200).json({ message: "user successfully updated", user: { id: id, ...body } })
     }
     else {
         res.status(404).json("Failed to update user")
