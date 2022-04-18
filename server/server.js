@@ -8,8 +8,9 @@ const app = express()
 const port = 3000
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-const router = express.Router()
 
+
+app.use('/client', express.static('../client'));
 app.use('/posts', posts)
 app.use('/user', users)
 app.use('/user/:userId/favorites', favorites)
