@@ -1,9 +1,9 @@
-import cart from './routes/cart'
-import favorites from './routes/favorites'
-import posts from './routes/posts'
-import users from './routes/users'
+import cart from './routes/cart.js'
+import favorites from './routes/favorites.js'
+import posts from './routes/posts.js'
+import users from './routes/users.js'
+import express from 'express'
 
-const express = require('express')
 const app = express()
 const port = 3000
 const router = express.Router()
@@ -20,5 +20,3 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
-
-module.exports(router)
