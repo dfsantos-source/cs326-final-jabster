@@ -52,7 +52,7 @@ const addPost = (data) => {
         directionsList.appendChild(li)
     })
     clon.getElementById('update-button').addEventListener("click", (event) => { updatePost(data) })
-    clon.getElementById('delete-button').addEventListener("click", async (event) => { deletePost(data) })
+    clon.getElementById('delete-button').addEventListener("click", (event) => { deletePost(data) })
     clon.getElementById('post-template-likes').innerText = 'Likes: ' + data.likes;
     clon.getElementById('post-template-dislikes').innerText = 'Dislikes: ' + data.dislikes;
     posts.appendChild(clon);

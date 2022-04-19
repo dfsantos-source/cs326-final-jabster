@@ -10,6 +10,14 @@
     background-color: rgb(162, 62, 62);
 }
 
+.like-img {
+    cursor: pointer;
+}
+
+.dislike-img {
+    cursor: pointer;
+}
+
 .grubify {
     display: flex;
     justify-content: center;

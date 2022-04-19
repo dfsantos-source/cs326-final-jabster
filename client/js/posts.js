@@ -1,3 +1,25 @@
+async function likePost(data) {
+    const response = await fetch(`/posts/${data.id}/like`, {
+        method: "PUT",
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+    const dataRes = await response.json()
+    console.log(dataRes)
+}
+
+async function dislikePost(data) {
+    const response = await fetch(`/posts/${data.id}/dislike`, {
+        method: "PUT",
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+    const dataRes = await response.json()
+    console.log(dataRes)
+}
+
 const addPost = (data) => {
     const temp = document.getElementsByTagName("template")[0];
     const clon = temp.content.cloneNode(true);
@@ -20,6 +42,8 @@ const addPost = (data) => {
         li.innerText = direction;
         directionsList.appendChild(li)
     })
+    clon.getElementById('like-button').addEventListener("click", (event) => { likePost(data) })
+    clon.getElementById('dislike-button').addEventListener("click", (event) => { dislikePost(data) })
     clon.getElementById('post-template-likes').innerText = 'Likes: ' + data.likes;
     clon.getElementById('post-template-dislikes').innerText = 'Dislikes: ' + data.dislikes;
     posts.appendChild(clon);
