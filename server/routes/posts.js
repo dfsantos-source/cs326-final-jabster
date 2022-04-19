@@ -65,8 +65,37 @@ router.get('/get/all', (req, res) => {
         likes: faker.random.number({'max':100}),
         dislikes: faker.random.number({'max':100}),
         description: 'Look at this amazing alfredo.',
-        directions: '1 boil water, 2 add sauce, bake in oven for 300 degrees 30 min',
-        ingredients: [`{id: 1, name: 'Peas', amount:'1 bag', post_id:2}, {id: 3, name: 'Corn', amount:'1 can', post_id:2}}`]
+        directions: [
+            'In a pan over medium-high heat, melt butter, then add the chicken breast.',
+            'Season with salt, pepper, oregano, and basil. Cook 8-10 minutes or until chicken is fully cooked. Remove from heat and set chicken aside.',
+            'In the same pan over medium heat, melt butter and add the garlic. Cook until the garlic begins to soften.',
+            'Add half of the flour to the garlic and butter, stirring until incorporated. Then add the rest of the flour and stir.',
+            'Pour in the milk a little bit at a time, stirring well in between, until fully incorporated and sauce begins to thicken.',
+            'Season with salt, pepper, oregano, and basil, and stir well to incorporate.',
+            'Add parmesan cheese and stir until melted.',
+            'Pour the sauce over cooked penne pasta, add the chicken and mix well.',
+            'Add parsley and extra parmesan. Mix well.',
+            'Enjoy!'
+        ],
+        ingredients:
+            ['1 ½ lb chicken breast, cubed',
+            '2 tablespoons butter',
+            '½ teaspoon dried oregano',
+            '½ teaspoon dried basil',
+            '½ teaspoon salt',
+            '½ teaspoon pepper',
+            '16 oz penne pasta, cooked',
+            '¼ cup fresh parsley',
+            '¼ cup shredded parmesan cheese',
+            '2 tablespoons butter',
+            '4 cloves garlic, minced',
+            '3 tablespoons flour',
+            '2 cups milk',
+            '½ teaspoon dried oregano',
+            '½ teaspoon dried basil',
+            '½ cup shredded parmesan cheese',
+            '½ teaspoon salt',
+            '½ teaspoon pepper']
     }
     const post2 = {
         id: faker.random.number({'max':100}),
@@ -76,8 +105,37 @@ router.get('/get/all', (req, res) => {
         likes: faker.random.number({'max':100}),
         dislikes: faker.random.number({'max':100}),
         description: 'Look at this amazing spaghetti.',
-        directions: '1 boil water, 2 add sauce, add meatballs, serve',
-        ingredients: [`{id: 1, name: 'Peas', amount:'1 bag', post_id:2}, {id: 3, name: 'Corn', amount:'1 can', post_id:2}}`]
+        directions: [
+            'In a pan over medium-high heat, melt butter, then add the chicken breast.',
+            'Season with salt, pepper, oregano, and basil. Cook 8-10 minutes or until chicken is fully cooked. Remove from heat and set chicken aside.',
+            'In the same pan over medium heat, melt butter and add the garlic. Cook until the garlic begins to soften.',
+            'Add half of the flour to the garlic and butter, stirring until incorporated. Then add the rest of the flour and stir.',
+            'Pour in the milk a little bit at a time, stirring well in between, until fully incorporated and sauce begins to thicken.',
+            'Season with salt, pepper, oregano, and basil, and stir well to incorporate.',
+            'Add parmesan cheese and stir until melted.',
+            'Pour the sauce over cooked penne pasta, add the chicken and mix well.',
+            'Add parsley and extra parmesan. Mix well.',
+            'Enjoy!'
+        ],
+        ingredients:
+            ['1 ½ lb chicken breast, cubed',
+            '2 tablespoons butter',
+            '½ teaspoon dried oregano',
+            '½ teaspoon dried basil',
+            '½ teaspoon salt',
+            '½ teaspoon pepper',
+            '16 oz penne pasta, cooked',
+            '¼ cup fresh parsley',
+            '¼ cup shredded parmesan cheese',
+            '2 tablespoons butter',
+            '4 cloves garlic, minced',
+            '3 tablespoons flour',
+            '2 cups milk',
+            '½ teaspoon dried oregano',
+            '½ teaspoon dried basil',
+            '½ cup shredded parmesan cheese',
+            '½ teaspoon salt',
+            '½ teaspoon pepper']
     }
     try {
         res.json([post1, post2])
