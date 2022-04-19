@@ -25,7 +25,11 @@ td {
     margin-left: auto;
     margin-right: auto;
     margin-top: 4em;
-    margin-bottom: 20%;
+    margin-bottom: 7em;
+}
+
+#grubify-post{
+    margin-top: -4em;
 }
 
 .picky-wrapper {
@@ -126,3 +130,4 @@ td {
     margin: auto;    
     flex-direction: column;
 }
+

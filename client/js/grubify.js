@@ -1,6 +1,7 @@
-const posts = document.getElementById("posts-main");
+const posts = document.getElementById("grubify-post");
 
 const addPost = (data) => {
+    posts.innerHTML= ""
     const temp = document.getElementsByTagName("template")[0];
     const clon = temp.content.cloneNode(true);
     clon.getElementById('grub-post-template-title').innerText = data.name;
