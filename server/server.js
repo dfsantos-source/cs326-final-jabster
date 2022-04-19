@@ -13,8 +13,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/client', express.static('../client'));
 app.use('/posts', posts)
 app.use('/user', users)
-app.use('/user/:userId/favorites', favorites)
-app.use('/user/:userId/cart', cart)
+app.use('/user/favorites', favorites)
+app.use('/user/cart', cart)
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
