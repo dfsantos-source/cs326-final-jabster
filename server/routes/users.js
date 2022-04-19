@@ -3,7 +3,7 @@ import faker from '@faker-js/faker'
 
 const router = express.Router()
 
-router.get("/login", (req, res) => {
+router.post("/login", (req, res) => {
     let body = req.body
     console.log(req.body)
     if (body.email === undefined || body.password === undefined) {
