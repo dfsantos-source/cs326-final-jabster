@@ -15,6 +15,7 @@ td {
     font-size: 3em;
 }
 
+
 .grubify-box {
     background-color: rgb(255, 149, 149);
     box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
@@ -81,4 +82,47 @@ td {
 
 .padding-bottom-large {
     padding-bottom: 3em;
+}
+
+.grub-post-img {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border-radius: 10px;
+}
+
+.reactions {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: row;
+}
+
+.dislike-img {
+    margin-left: 20px;
+}
+
+.grubify-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.post {
+    color: white;
+    padding-top: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 3em;    
+    justify-content: center;
+    margin: 0;
+    margin-bottom: 2em;
+    background-color:rgb(48, 48, 48);
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.posts-main {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    margin: auto;    
+    flex-direction: column;
 }
