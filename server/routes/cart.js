@@ -1,10 +1,11 @@
 import express from 'express'
+import faker from '@faker-js/faker'
 
 const router = express.Router()
 
 router.get("/:userId/get", (req, res) => {
     const userId = req.params.userId
-    const data = [{ id: 1, userId: userId, name: "butter", amount: "2 tablespoons" }, { id: 2, userId: userId, name: "milk", amount: "1 gallon" }, { id: 3, userId: userId, name: "eggs", amount: "1 dozen" }]
+    const data = [{ id: faker.random.number({ max: 100 }), userId: userId, name: "butter", amount: "2 tablespoons" }, { id: 2, userId: userId, name: "milk", amount: "1 gallon" }, { id: 3, userId: userId, name: "eggs", amount: "1 dozen" }]
     if (userId !== undefined) {
         res.status(200).json(data);
     }

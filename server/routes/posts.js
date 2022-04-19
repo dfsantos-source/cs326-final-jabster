@@ -17,14 +17,14 @@ const router = express.Router()
 // create a post
 router.post('/create', (req, res) => {
     const post = {
-        id: faker.random.number({'max':100}),
+        id: faker.random.number({ 'max': 100 }),
         name: req.body.name,
         img: faker.image.food(),
         tags: [],
-        user_id: faker.random.number({'max':100}),
+        user_id: faker.random.number({ 'max': 100 }),
         cuisine: req.body.cuisine,
-        likes: faker.random.number({'max':100}),
-        dislikes: faker.random.number({'max':100}),
+        likes: faker.random.number({ 'max': 100 }),
+        dislikes: faker.random.number({ 'max': 100 }),
         description: req.body.description,
         directions: req.body.directions,
         ingredients: req.body.ingredients
@@ -40,7 +40,7 @@ router.post('/create', (req, res) => {
 // update a post id
 router.put('/update/:postId', (req, res) => {
     try {
-        res.json({post: req.body, message: "Succesfully updated post"})
+        res.json({ post: req.body, message: "Succesfully updated post" })
     }
     catch {
         res.status(404).json({ err: 'Error updating post' });
@@ -50,7 +50,7 @@ router.put('/update/:postId', (req, res) => {
 // delete a post by id
 router.delete('/delete/:postId', (req, res) => {
     try {
-        res.json({message: 'Successfully deleted.'})
+        res.json({ message: 'Successfully deleted.' })
     }
     catch {
         res.status(404).json({ err: 'Error deleting post' });
@@ -60,14 +60,14 @@ router.delete('/delete/:postId', (req, res) => {
 // get all posts
 router.get('/get/all', (req, res) => {
     const post1 = {
-        id: faker.random.number({'max':100}),
+        id: faker.random.number({ 'max': 100 }),
         name: 'Alfredo',
         img: faker.image.food(640, 480, true),
         tags: [],
-        user_id: faker.random.number({'max':100}),
+        user_id: faker.random.number({ 'max': 100 }),
         cuisine: 'Italian',
-        likes: faker.random.number({'max':100}),
-        dislikes: faker.random.number({'max':100}),
+        likes: faker.random.number({ 'max': 100 }),
+        dislikes: faker.random.number({ 'max': 100 }),
         description: 'Look at this amazing alfredo.',
         directions: [
             'In a pan over medium-high heat, melt butter, then add the chicken breast.',
@@ -83,33 +83,33 @@ router.get('/get/all', (req, res) => {
         ],
         ingredients:
             ['1 ½ lb chicken breast, cubed',
-            '2 tablespoons butter',
-            '½ teaspoon dried oregano',
-            '½ teaspoon dried basil',
-            '½ teaspoon salt',
-            '½ teaspoon pepper',
-            '16 oz penne pasta, cooked',
-            '¼ cup fresh parsley',
-            '¼ cup shredded parmesan cheese',
-            '2 tablespoons butter',
-            '4 cloves garlic, minced',
-            '3 tablespoons flour',
-            '2 cups milk',
-            '½ teaspoon dried oregano',
-            '½ teaspoon dried basil',
-            '½ cup shredded parmesan cheese',
-            '½ teaspoon salt',
-            '½ teaspoon pepper']
+                '2 tablespoons butter',
+                '½ teaspoon dried oregano',
+                '½ teaspoon dried basil',
+                '½ teaspoon salt',
+                '½ teaspoon pepper',
+                '16 oz penne pasta, cooked',
+                '¼ cup fresh parsley',
+                '¼ cup shredded parmesan cheese',
+                '2 tablespoons butter',
+                '4 cloves garlic, minced',
+                '3 tablespoons flour',
+                '2 cups milk',
+                '½ teaspoon dried oregano',
+                '½ teaspoon dried basil',
+                '½ cup shredded parmesan cheese',
+                '½ teaspoon salt',
+                '½ teaspoon pepper']
     }
     const post2 = {
-        id: faker.random.number({'max':100}),
+        id: faker.random.number({ 'max': 100 }),
         name: 'Spaghetti',
         img: faker.image.food(640, 480, true),
         tags: [],
-        user_id: faker.random.number({'max':100}),
+        user_id: faker.random.number({ 'max': 100 }),
         cuisine: 'Italian',
-        likes: faker.random.number({'max':100}),
-        dislikes: faker.random.number({'max':100}),
+        likes: faker.random.number({ 'max': 100 }),
+        dislikes: faker.random.number({ 'max': 100 }),
         description: 'Look at this amazing spaghetti.',
         directions: [
             'In a pan over medium-high heat, melt butter, then add the chicken breast.',
@@ -125,29 +125,123 @@ router.get('/get/all', (req, res) => {
         ],
         ingredients:
             ['1 ½ lb chicken breast, cubed',
-            '2 tablespoons butter',
-            '½ teaspoon dried oregano',
-            '½ teaspoon dried basil',
-            '½ teaspoon salt',
-            '½ teaspoon pepper',
-            '16 oz penne pasta, cooked',
-            '¼ cup fresh parsley',
-            '¼ cup shredded parmesan cheese',
-            '2 tablespoons butter',
-            '4 cloves garlic, minced',
-            '3 tablespoons flour',
-            '2 cups milk',
-            '½ teaspoon dried oregano',
-            '½ teaspoon dried basil',
-            '½ cup shredded parmesan cheese',
-            '½ teaspoon salt',
-            '½ teaspoon pepper']
+                '2 tablespoons butter',
+                '½ teaspoon dried oregano',
+                '½ teaspoon dried basil',
+                '½ teaspoon salt',
+                '½ teaspoon pepper',
+                '16 oz penne pasta, cooked',
+                '¼ cup fresh parsley',
+                '¼ cup shredded parmesan cheese',
+                '2 tablespoons butter',
+                '4 cloves garlic, minced',
+                '3 tablespoons flour',
+                '2 cups milk',
+                '½ teaspoon dried oregano',
+                '½ teaspoon dried basil',
+                '½ cup shredded parmesan cheese',
+                '½ teaspoon salt',
+                '½ teaspoon pepper']
     }
     try {
         res.json([post1, post2]);
     }
     catch {
         res.status(404).json({ err: 'Error reading all post' });
+    }
+})
+
+router.get('/get/user/:userId', (req, res) => {
+    const post1 = {
+        id: faker.random.number({ 'max': 100 }),
+        name: 'Alfredo',
+        img: faker.image.food(640, 480, true),
+        tags: [],
+        user_id: req.params.userId,
+        cuisine: 'Italian',
+        likes: faker.random.number({ 'max': 100 }),
+        dislikes: faker.random.number({ 'max': 100 }),
+        description: 'Look at this amazing alfredo.',
+        directions: [
+            'In a pan over medium-high heat, melt butter, then add the chicken breast.',
+            'Season with salt, pepper, oregano, and basil. Cook 8-10 minutes or until chicken is fully cooked. Remove from heat and set chicken aside.',
+            'In the same pan over medium heat, melt butter and add the garlic. Cook until the garlic begins to soften.',
+            'Add half of the flour to the garlic and butter, stirring until incorporated. Then add the rest of the flour and stir.',
+            'Pour in the milk a little bit at a time, stirring well in between, until fully incorporated and sauce begins to thicken.',
+            'Season with salt, pepper, oregano, and basil, and stir well to incorporate.',
+            'Add parmesan cheese and stir until melted.',
+            'Pour the sauce over cooked penne pasta, add the chicken and mix well.',
+            'Add parsley and extra parmesan. Mix well.',
+            'Enjoy!'
+        ],
+        ingredients:
+            ['1 ½ lb chicken breast, cubed',
+                '2 tablespoons butter',
+                '½ teaspoon dried oregano',
+                '½ teaspoon dried basil',
+                '½ teaspoon salt',
+                '½ teaspoon pepper',
+                '16 oz penne pasta, cooked',
+                '¼ cup fresh parsley',
+                '¼ cup shredded parmesan cheese',
+                '2 tablespoons butter',
+                '4 cloves garlic, minced',
+                '3 tablespoons flour',
+                '2 cups milk',
+                '½ teaspoon dried oregano',
+                '½ teaspoon dried basil',
+                '½ cup shredded parmesan cheese',
+                '½ teaspoon salt',
+                '½ teaspoon pepper']
+    }
+    const post2 = {
+        id: faker.random.number({ 'max': 100 }),
+        name: 'Spaghetti',
+        img: faker.image.food(640, 480, true),
+        tags: [],
+        user_id: req.params.userId,
+        cuisine: 'Italian',
+        likes: faker.random.number({ 'max': 100 }),
+        dislikes: faker.random.number({ 'max': 100 }),
+        description: 'Look at this amazing spaghetti.',
+        directions: [
+            'In a pan over medium-high heat, melt butter, then add the chicken breast.',
+            'Season with salt, pepper, oregano, and basil. Cook 8-10 minutes or until chicken is fully cooked. Remove from heat and set chicken aside.',
+            'In the same pan over medium heat, melt butter and add the garlic. Cook until the garlic begins to soften.',
+            'Add half of the flour to the garlic and butter, stirring until incorporated. Then add the rest of the flour and stir.',
+            'Pour in the milk a little bit at a time, stirring well in between, until fully incorporated and sauce begins to thicken.',
+            'Season with salt, pepper, oregano, and basil, and stir well to incorporate.',
+            'Add parmesan cheese and stir until melted.',
+            'Pour the sauce over cooked penne pasta, add the chicken and mix well.',
+            'Add parsley and extra parmesan. Mix well.',
+            'Enjoy!'
+        ],
+        ingredients:
+            ['1 ½ lb chicken breast, cubed',
+                '2 tablespoons butter',
+                '½ teaspoon dried oregano',
+                '½ teaspoon dried basil',
+                '½ teaspoon salt',
+                '½ teaspoon pepper',
+                '16 oz penne pasta, cooked',
+                '¼ cup fresh parsley',
+                '¼ cup shredded parmesan cheese',
+                '2 tablespoons butter',
+                '4 cloves garlic, minced',
+                '3 tablespoons flour',
+                '2 cups milk',
+                '½ teaspoon dried oregano',
+                '½ teaspoon dried basil',
+                '½ cup shredded parmesan cheese',
+                '½ teaspoon salt',
+                '½ teaspoon pepper']
+    }
+
+    try {
+        res.json([post1, post2]);
+    }
+    catch {
+        res.status(404).json({ err: `could not get user ${req.params.userId} posts` });
     }
 })
 
@@ -160,14 +254,14 @@ router.get('/get/all', (req, res) => {
 
 router.get('/get/:postId', (req, res) => {
     const post = {
-        id: faker.random.number({'max':100}),
+        id: faker.random.number({ 'max': 100 }),
         name: 'Alfredo',
         img: faker.image.food(640, 480, true),
         tags: [],
-        user_id: faker.random.number({'max':100}),
+        user_id: faker.random.number({ 'max': 100 }),
         cuisine: 'Italian',
-        likes: faker.random.number({'max':100}),
-        dislikes: faker.random.number({'max':100}),
+        likes: faker.random.number({ 'max': 100 }),
+        dislikes: faker.random.number({ 'max': 100 }),
         description: 'Look at this amazing alfredo.',
         directions: [
             'In a pan over medium-high heat, melt butter, then add the chicken breast.',
@@ -183,23 +277,23 @@ router.get('/get/:postId', (req, res) => {
         ],
         ingredients:
             ['1 ½ lb chicken breast, cubed',
-            '2 tablespoons butter',
-            '½ teaspoon dried oregano',
-            '½ teaspoon dried basil',
-            '½ teaspoon salt',
-            '½ teaspoon pepper',
-            '16 oz penne pasta, cooked',
-            '¼ cup fresh parsley',
-            '¼ cup shredded parmesan cheese',
-            '2 tablespoons butter',
-            '4 cloves garlic, minced',
-            '3 tablespoons flour',
-            '2 cups milk',
-            '½ teaspoon dried oregano',
-            '½ teaspoon dried basil',
-            '½ cup shredded parmesan cheese',
-            '½ teaspoon salt',
-            '½ teaspoon pepper']
+                '2 tablespoons butter',
+                '½ teaspoon dried oregano',
+                '½ teaspoon dried basil',
+                '½ teaspoon salt',
+                '½ teaspoon pepper',
+                '16 oz penne pasta, cooked',
+                '¼ cup fresh parsley',
+                '¼ cup shredded parmesan cheese',
+                '2 tablespoons butter',
+                '4 cloves garlic, minced',
+                '3 tablespoons flour',
+                '2 cups milk',
+                '½ teaspoon dried oregano',
+                '½ teaspoon dried basil',
+                '½ cup shredded parmesan cheese',
+                '½ teaspoon salt',
+                '½ teaspoon pepper']
     }
     try {
         res.json(post);
@@ -211,14 +305,14 @@ router.get('/get/:postId', (req, res) => {
 
 router.get('/get/random', (req, res) => {
     const post1 = {
-        id: faker.random.number({'max':100}),
+        id: faker.random.number({ 'max': 100 }),
         name: 'Alfredo',
         img: faker.image.food(640, 480, true),
         tags: [],
-        user_id: faker.random.number({'max':100}),
+        user_id: faker.random.number({ 'max': 100 }),
         cuisine: 'Italian',
-        likes: faker.random.number({'max':100}),
-        dislikes: faker.random.number({'max':100}),
+        likes: faker.random.number({ 'max': 100 }),
+        dislikes: faker.random.number({ 'max': 100 }),
         description: 'Look at this amazing alfredo.',
         directions: [
             'In a pan over medium-high heat, melt butter, then add the chicken breast.',
@@ -234,33 +328,33 @@ router.get('/get/random', (req, res) => {
         ],
         ingredients:
             ['1 ½ lb chicken breast, cubed',
-            '2 tablespoons butter',
-            '½ teaspoon dried oregano',
-            '½ teaspoon dried basil',
-            '½ teaspoon salt',
-            '½ teaspoon pepper',
-            '16 oz penne pasta, cooked',
-            '¼ cup fresh parsley',
-            '¼ cup shredded parmesan cheese',
-            '2 tablespoons butter',
-            '4 cloves garlic, minced',
-            '3 tablespoons flour',
-            '2 cups milk',
-            '½ teaspoon dried oregano',
-            '½ teaspoon dried basil',
-            '½ cup shredded parmesan cheese',
-            '½ teaspoon salt',
-            '½ teaspoon pepper']
+                '2 tablespoons butter',
+                '½ teaspoon dried oregano',
+                '½ teaspoon dried basil',
+                '½ teaspoon salt',
+                '½ teaspoon pepper',
+                '16 oz penne pasta, cooked',
+                '¼ cup fresh parsley',
+                '¼ cup shredded parmesan cheese',
+                '2 tablespoons butter',
+                '4 cloves garlic, minced',
+                '3 tablespoons flour',
+                '2 cups milk',
+                '½ teaspoon dried oregano',
+                '½ teaspoon dried basil',
+                '½ cup shredded parmesan cheese',
+                '½ teaspoon salt',
+                '½ teaspoon pepper']
     }
     const post2 = {
-        id: faker.random.number({'max':100}),
+        id: faker.random.number({ 'max': 100 }),
         name: 'Spaghetti',
         img: faker.image.food(640, 480, true),
         tags: [],
-        user_id: faker.random.number({'max':100}),
+        user_id: faker.random.number({ 'max': 100 }),
         cuisine: 'Italian',
-        likes: faker.random.number({'max':100}),
-        dislikes: faker.random.number({'max':100}),
+        likes: faker.random.number({ 'max': 100 }),
+        dislikes: faker.random.number({ 'max': 100 }),
         description: 'Look at this amazing spaghetti.',
         directions: [
             'In a pan over medium-high heat, melt butter, then add the chicken breast.',
@@ -276,28 +370,28 @@ router.get('/get/random', (req, res) => {
         ],
         ingredients:
             ['1 ½ lb chicken breast, cubed',
-            '2 tablespoons butter',
-            '½ teaspoon dried oregano',
-            '½ teaspoon dried basil',
-            '½ teaspoon salt',
-            '½ teaspoon pepper',
-            '16 oz penne pasta, cooked',
-            '¼ cup fresh parsley',
-            '¼ cup shredded parmesan cheese',
-            '2 tablespoons butter',
-            '4 cloves garlic, minced',
-            '3 tablespoons flour',
-            '2 cups milk',
-            '½ teaspoon dried oregano',
-            '½ teaspoon dried basil',
-            '½ cup shredded parmesan cheese',
-            '½ teaspoon salt',
-            '½ teaspoon pepper']
+                '2 tablespoons butter',
+                '½ teaspoon dried oregano',
+                '½ teaspoon dried basil',
+                '½ teaspoon salt',
+                '½ teaspoon pepper',
+                '16 oz penne pasta, cooked',
+                '¼ cup fresh parsley',
+                '¼ cup shredded parmesan cheese',
+                '2 tablespoons butter',
+                '4 cloves garlic, minced',
+                '3 tablespoons flour',
+                '2 cups milk',
+                '½ teaspoon dried oregano',
+                '½ teaspoon dried basil',
+                '½ cup shredded parmesan cheese',
+                '½ teaspoon salt',
+                '½ teaspoon pepper']
     }
-    const postArr = [post1, post2] 
+    const postArr = [post1, post2]
     try {
-        const length = postArr.length -1;
-        res.json(postArr[faker.random.number({'max': length, 'min': 0})]);
+        const length = postArr.length - 1;
+        res.json("hi");
     }
     catch {
         res.status(404).json({ err: 'Error getting random post' });
@@ -305,20 +399,20 @@ router.get('/get/random', (req, res) => {
 })
 
 router.put('/:postId/like', (req, res) => {
-    try{
+    try {
         res.json("likes have been updated");
     }
-    catch{
-        res.status(404).json({err: 'Error liking post'});
+    catch {
+        res.status(404).json({ err: 'Error liking post' });
     }
 })
 
 router.put('/:postId/dislike', (req, res) => {
-    try{
+    try {
         res.json("dislikes have been updated");
     }
-    catch{
-        res.status(404).json({err: 'Error disliking post'})
+    catch {
+        res.status(404).json({ err: 'Error disliking post' })
     }
 })
 

@@ -1,0 +1,9 @@
+.post-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.button {
+    margin-right: 10px;
+}
