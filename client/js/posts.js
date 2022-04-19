@@ -4,6 +4,8 @@ const addPost = (data) => {
     clon.getElementById('post-template-title').innerText = data.name;
     clon.getElementById('post-template-cuisine').innerText = data.cuisine;
     clon.getElementById('post-template-description').innerText = data.description;
+    clon.getElementById('post-template-img').src = data.img;
+    clon.getElementById('post-template-author').innerText = 'By: User' + data.user_id;
     const ingredientsList = clon.getElementById('post-template-ingredients');
     const directionsList = clon.getElementById('post-template-directions');
     const ingredients = data.ingredients;

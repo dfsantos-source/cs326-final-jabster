@@ -19,6 +19,8 @@ router.post('/create', (req, res) => {
     const post = {
         id: faker.random.number({'max':100}),
         name: req.body.name,
+        img: faker.image.food(),
+        tags: [],
         user_id: faker.random.number({'max':100}),
         cuisine: req.body.cuisine,
         likes: faker.random.number({'max':100}),
@@ -60,6 +62,8 @@ router.get('/get/all', (req, res) => {
     const post1 = {
         id: faker.random.number({'max':100}),
         name: 'Alfredo',
+        img: faker.image.food(640, 480, true),
+        tags: [],
         user_id: faker.random.number({'max':100}),
         cuisine: 'Italian',
         likes: faker.random.number({'max':100}),
@@ -100,6 +104,8 @@ router.get('/get/all', (req, res) => {
     const post2 = {
         id: faker.random.number({'max':100}),
         name: 'Spaghetti',
+        img: faker.image.food(640, 480, true),
+        tags: [],
         user_id: faker.random.number({'max':100}),
         cuisine: 'Italian',
         likes: faker.random.number({'max':100}),
