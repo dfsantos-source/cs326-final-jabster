@@ -2,7 +2,7 @@
 document.getElementById('login').addEventListener('click', async (e) => {
     const email = document.getElementById('email').value;
     const pass = document.getElementById('password').value;
-    const register = {
+    const login = {
         email: email,
         password: pass
     }
@@ -12,11 +12,11 @@ document.getElementById('login').addEventListener('click', async (e) => {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(register)
+        body: JSON.stringify(login)
     })
 
-    const data = await res.json()
-    const status = await res.status
+    const data = await res.json();
+    const status = await res.status;
 
     if (status === 200) {
         window.location.href = "/client/html/grubify.html";
