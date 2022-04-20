@@ -37,27 +37,13 @@
     <div class="user-food box">
       <div class="favorite-recipe">
         <h3 class="user-food-title">Favorite Recipes:</h3>
-        <div class="card-wrapper">
-          <div class="food-card">
-            <img class="card-img"src="../public/images/Chicken Alfredo.jpeg" alt="" height="120px" width="120px">
-            <h5 class="card-title">Chicken Alfredo</h5>
-          </div>
-          <div class="food-card">
-            <img class="card-img"src="../public/images/Chicken Alfredo.jpeg" alt="" height="120px" width="120px">
-            <h5 class="card-title">Chicken Alfredo</h5>
-          </div>
-          <div class="food-card">
-            <img class="card-img"src="../public/images/Chicken Alfredo.jpeg" alt="" height="120px" width="120px">
-            <h5 class="card-title">Chicken Alfredo</h5>
-          </div>
-          <div class="food-card">
-            <img class="card-img"src="../public/images/Chicken Alfredo.jpeg" alt="" height="120px" width="120px">
-            <h5 class="card-title">Chicken Alfredo</h5>
-          </div>
-          <div class="food-card">
-            <img class="card-img"src="../public/images/Chicken Alfredo.jpeg" alt="" height="120px" width="120px">
-            <h5 class="card-title">Chicken Alfredo</h5>
-          </div>
+        <div class="card-wrapper" id="favorite-recipes">
+          <template>
+              <div class="food-card">
+                <img class="card-img" id="recipe-image" src="" alt="" height="120px" width="120px">
+                <h5 class="card-title" id="recipe-title"></h5>
+              </div>
+          </template>
         </div>
       </div>
       <div class="shopping-cart">
