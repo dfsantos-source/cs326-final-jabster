@@ -20,6 +20,17 @@ async function dislikePost(data) {
     console.log(dataRes)
 }
 
+async function favoritePost(data) {
+    const response = await fetch(`/user/favorites/${data.id}/add`, {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+    const dataRes = await response.json()
+    console.log(dataRes)
+}
+
 const addPost = (data) => {
     const temp = document.getElementsByTagName("template")[0];
     const clon = temp.content.cloneNode(true);
@@ -44,6 +55,7 @@ const addPost = (data) => {
     })
     clon.getElementById('like-button').addEventListener("click", (event) => { likePost(data) })
     clon.getElementById('dislike-button').addEventListener("click", (event) => { dislikePost(data) })
+    clon.getElementById('post-template-favorite').addEventListener("click", (event) => { favoritePost(data) })
     clon.getElementById('post-template-likes').innerText = 'Likes: ' + data.likes;
     clon.getElementById('post-template-dislikes').innerText = 'Dislikes: ' + data.dislikes;
     posts.appendChild(clon);
