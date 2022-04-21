@@ -108,23 +108,23 @@ Params:
 
 Interface screenshots
 
-![Create](./images/create-top-half.png)
-![Create](./images/create-bottom-half.png)
+![Create-top](./images/create-top-half.png)
+![Create-bottom](./images/create-bottom-half.png)
 
 (Create) This part of the interface details the creation of a recipe post on the webite. The users are prompted to insert, in this order, the title of the dish, a desciption of the dish, the ingredients needed to make the dish, and the directions needed to cook the dish to perfection. After the post is created, the post will be inserted into the site's dish database, where users will be able to subsequently access the dish for later use.
 
-![Create](./images/update-top.png)
-![Create](./images/update-bottom.png)
+![Update-top](./images/update-top.png)
+![Update-bottom](./images/update-bottom.png)
 
 (Update) This part of the interface details updating the post that the user creates. The user will be taken to a page constructed similarly with the page for creating a post. The only main difference is that the input fields for each of the section of the post are already fillled in with what was inserted when last working with the post. Users will be able to update whatever aspect they want with the input, and it will be subsequently updated in that specific post's object.
 
-![Create](./images/read-top.png)
-![Create](./images/read-middle.png)
-![Create](./images/read-bottom.png)
+![Read-top](./images/read-top.png)
+![Read-middle](./images/read-middle.png)
+![Read-bottom](./images/read-bottom.png)
 
 (Read) This part of the interface details the reading of a recipe post on the website after calling the grubify button when searching for recipes. The interface will display the filtered posts, where users will be able to observe all components of the post, as well as the ability to like and dislike the posts.
 
-![Create](./images/delete.png)
+![Delete](./images/delete.png)
 
 (DELETE) This part of the interface details the deletion of one of the post cards from the user's favorite recipes list. Upon clicking the trash can image placed at the bottom right of the card, the post will be wiped from the user's set of personal favorite recipes from the wesbite. This ties to its endpoint, where the post will be removed from the user's database of stored personal favorites.
 
@@ -139,3 +139,13 @@ Nolan LaRochelle - Handled server endpoints in the backend for getting a random 
 Aayush Bhagat - Did user and cart item api endpoints. Implemented update posts and my-post.html page for the  front end html and js. And also front end implementation for changing password and username and login. 
 
 Ali Rabeea - Heroku deployment, backend skeleton code for favorites, refactored profile favorites, frontend implementation for favorite post, delete cart and delete favorite from profile page.
+
+==============================
+
+Example Client Side Routes (look at client/html/ for other pages)
+https://grubify-deploy.herokuapp.com/client/html/posts.html
+
+https://grubify-deploy.herokuapp.com/client/html/user-profile.html
+
+Routing Link
+https://grubify-deploy.herokuapp.com/ 
