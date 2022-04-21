@@ -55,7 +55,14 @@
       <div class="shopping-cart">
         <div class="d-flex mt-3">
           <h3 class="">Shopping Cart:</h3>
-          <button class="add mt-1">Add</button>
+          <button id="add-handler" class="add mt-1">Add</button>
+          <div id="ingredient-form" class="add-form">
+            <label>Ingredient Name:</label>
+            <input id="ingredient-name-add" value="ingredient">
+            <label>Amount:</label>
+            <input id="ingredient-amount-add" value="amount">
+            <button id="ingredient-submit">Add</button>
+          </div>
         </div>
         <div id="cart" class="card-wrapper">
           <template>
