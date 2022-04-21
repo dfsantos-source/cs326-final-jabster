@@ -3,6 +3,24 @@
   margin-top: 3em;
 }
 
+.add {
+  border-style: none;
+  width: 5em;
+  height: 2em;
+  background-color: rgb(250, 159, 159);
+  border-radius: 20px;
+  margin-left: 1em;
+}
+
+.trash {
+  margin-left: auto;
+  margin-top: auto;
+}
+
+.trash-icon {
+  margin-right: 5px;
+}
+
 .user-wrapper {
   display: grid;
   grid-template-columns: 20% 75%;
@@ -26,8 +44,9 @@
 
 .user-food {
   margin-left: 3em;
-  height: 45em;
+  height: 100%;
   padding-left: 2em;
+  margin-bottom: 2em;
 }
 
 .username {
