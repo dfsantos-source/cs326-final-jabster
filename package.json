@@ -1,0 +1,22 @@
+{
+    "name": "cs326-final-jabster",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server/server.js",
+    "type": "module",
+    "engines": {
+      "node": "16.11.0"
+    },
+    "scripts": {
+      "deploy": "copyfiles client/* client/**/* client/**/**/* server/* server/**/* .env package*.json deploy",
+      "start": "node server/server.js"
+    },
+    "dependencies": {
+      "express": "^4.17.3"
+    },
+    "devDependencies": {
+      "copyfiles": "^2.4.1"
+    },
+    "author": "",
+    "license": "ISC"
+  }

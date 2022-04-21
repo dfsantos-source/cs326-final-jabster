@@ -5,12 +5,12 @@ import users from './routes/users.js'
 import express from 'express'
 
 const app = express()
-const port = 3000
+const port = process.env.PORT || 30000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 
-app.use('/client', express.static('../client'));
+app.use('/client', express.static('client'));
 app.use('/posts', posts)
 app.use('/user', users)
 app.use('/user/favorites', favorites)
