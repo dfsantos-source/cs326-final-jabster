@@ -25,6 +25,35 @@ const addPost = (data) => {
     })
     clon.getElementById('grub-post-template-likes').innerText = 'Likes: ' + data.likes;
     clon.getElementById('grub-post-template-dislikes').innerText = 'Dislikes: ' + data.dislikes;
+
+    clon.getElementById("grub-like-img").addEventListener('click', async (e) => {
+        const res = await fetch(`/posts/${data.id}/like`, {
+            method: "PUT",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        const newData = await res.json();
+        const status = await res.status;
+        if(status === 200){
+            console.log(newData);
+        }
+    })
+    
+    clon.getElementById("grub-dislike-img").addEventListener('click', async (e) => {
+        const res = await fetch(`/posts/${data.id}/dislike`, {
+            method: "PUT",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        const newData = await res.json();
+        const status = await res.status;
+        if(status === 200){
+            console.log(newData);
+        }
+    })
+
     posts.appendChild(clon);
 }
 

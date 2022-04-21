@@ -100,8 +100,13 @@ td {
     flex-direction: row;
 }
 
-.dislike-img {
+#grub-like-img {
+    cursor: pointer;
+}
+
+#grub-dislike-img {
     margin-left: 20px;
+    cursor: pointer;
 }
 
 .grubify-content {
@@ -130,4 +135,3 @@ td {
     margin: auto;    
     flex-direction: column;
 }
-
