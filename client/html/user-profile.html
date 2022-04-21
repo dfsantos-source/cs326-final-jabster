@@ -1,39 +1,44 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="../styles/user-profile.css">
-    <link rel="stylesheet" href="../styles/global.css">
-    <script type="module" src="../js/user-profile.js"></script>
-    <title>Guess My Grub</title>
-  </head>
-  <body>
-    <div class="navbar">
-      <div> 
-        <img src = "../public/images/logo.png" alt="logo" width = 65px padding = 1px> </img>
-        <div class = "home-text link">Home</div>
-        <div class = "grubify-text link">Grubify</div>
-      </div>
-      <div>
-        <div class = "sign-in-text link">Sign In</div>
-        <div class = "register-text link">Register</div>   
-      </div>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="../styles/user-profile.css">
+  <link rel="stylesheet" href="../styles/global.css">
+  <script type="module" src="../js/user-profile.js"></script>
+  <title>Guess My Grub</title>
+</head>
+
+<body>
+  <div class="navbar">
+    <div>
+      <img src="../public/images/logo.png" alt="logo" width=65px padding=1px> </img>
+      <div class="home-text link">Home</div>
+      <div class="grubify-text link">Grubify</div>
     </div>
+    <div>
+      <div class="sign-in-text link">Sign In</div>
+      <div class="register-text link">Register</div>
+    </div>
+  </div>
 
-    <h1 class="profile">User Profile</h1>
-    <div class="user-wrapper">
+  <h1 class="profile">User Profile</h1>
+  <div class="user-wrapper">
     <div class="user-info box">
       <img class="profile-pic" src="../public/images/User_profile.jpeg" height="150px" width="150px" alt="">
       <h1 class="name">Eric</h1>
       <p class="username">@CoolGuyEric</p>
-      <button class="change-button">Change Username</button>
+      <button class="change-button" id="change-username">Change Username</button>
+      <div id="change-username-form"></div>
       <br>
-      <button class="change-button">Change Password</button>
+      <button class="change-button" id="change-pass">Change Password</button>
+      <div id="change-password-form"></div>
     </div>
     <div class="user-food box">
       <div class="favorite-recipe">
@@ -42,13 +47,14 @@
         </div>
         <div class="card-wrapper" id="favorite-recipes">
           <template>
-              <div class="food-card">
-                <img class="card-img" id="recipe-image" src="" alt="" height="120px" width="120px">
-                <h5 class="card-title" id="recipe-title"></h5>
-                <div class="trash">
-                  <img class="mb-2 trash-icon" id="delete-favorite" src="../public/images/trash.png" alt="" height="25px" width="25px">
-                </div>
+            <div class="food-card">
+              <img class="card-img" id="recipe-image" src="" alt="" height="120px" width="120px">
+              <h5 class="card-title" id="recipe-title"></h5>
+              <div class="trash">
+                <img class="mb-2 trash-icon" id="delete-favorite" src="../public/images/trash.png" alt="" height="25px"
+                  width="25px">
               </div>
+            </div>
           </template>
         </div>
       </div>
@@ -58,22 +64,24 @@
           <button id="add-handler" class="add mt-1">Add</button>
           <div id="ingredient-form" class="add-form">
             <label>Ingredient Name:</label>
-            <input id="ingredient-name-add" value="ingredient">
+            <input id="ingredient-name-add" placeholder="ingredient">
             <label>Amount:</label>
-            <input id="ingredient-amount-add" value="amount">
+            <input id="ingredient-amount-add" placeholder="amount">
             <button id="ingredient-submit">Add</button>
           </div>
         </div>
         <div id="cart" class="card-wrapper">
           <template>
             <div class="food-card">
-              <img id="cart-item-img" class="card-img" src="../public/images/Butter.jpeg" alt="" width="120px" height="120px">
+              <img id="cart-item-img" class="card-img" src="../public/images/Butter.jpeg" alt="" width="120px"
+                height="120px">
               <div class="wrapper">
                 <h5 id="cart-item-title" class="card-title">Butter</h5>
                 <p id="cart-item-amount" class="card-text">2 Tbsp</p>
               </div>
               <div class="trash">
-                <img class="mb-2 trash-icon" id="delete-cart" src="../public/images/trash.png" alt="" height="25px" width="25px">
+                <img class="mb-2 trash-icon" id="delete-cart" src="../public/images/trash.png" alt="" height="25px"
+                  width="25px">
               </div>
             </div>
           </template>
@@ -82,6 +90,7 @@
 
     </div>
     <div class="mb-5"></div>
-    </div>
-  </body>
+  </div>
+</body>
+
 </html>
