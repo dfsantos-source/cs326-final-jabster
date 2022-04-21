@@ -2,7 +2,9 @@
 ## API
 
 #### Database Schema
-![Database][./images/schema.png]
+
+![Database](./images/schema.png)
+
 #### Posts Endpoints
 
 - POST create a post (/posts/create): Allows a user to create a new Recipe post  
@@ -15,8 +17,7 @@
         ingredients: String  
     }  
 
-- PUT update a post (/posts/update/:postId): Allows User to update their own posts  
-    Params:  
+- PUT update a post (/posts/update/:postId): Allows User to update their own posts   
         Request Body: {  
             name: String
             cusine: String  
@@ -25,15 +26,16 @@
             ingredients: String  
         }  
   
-- DELETE a post (/posts/delete/:postId): Allows a user to delete one of their posts  
-    Paramss: Post_id  
+- DELETE a post (/posts/delete/:postId): Allows a user to delete one of their posts   
+    Params:  
+    post_id: number  
 
-- GET read all posts (/posts/get/all): Returns all of the posts from the database so the user can see all posts
+- GET read all posts (/posts/get/all): Returns all of the posts from the database so the user can see all posts  
 
 
-- GET a specific post (/posts/get/:postId): Returns the posts objct for the specific post  
-Params:
-    post_id: number 
+- GET a specific post (/posts/get/:postId): Returns the posts objct for the specific post    
+    Params:  
+    post_id: number   
 
 - GET read a random post (/posts/get/random): Returns a random post from the database  
 
@@ -49,12 +51,13 @@ Params:
 
 #### Users Endpoints
 
-- POST login (user/login): Allows a user to login into the web app  
+- POST login (user/login): Allows a user to login into the web app    
     Request Body {  
-        email: String  
+        email: String    
         password: String  
-    }  
-- GET Get user data (user/:id): Gets a specific user's data
+    }   
+
+- GET Get user data (user/:id): Gets a specific user's data  
 
 - PUT update user data (user/update/:id): Allows a useer to updaate their credentials  
 Request Body: {  
