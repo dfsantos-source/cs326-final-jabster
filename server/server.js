@@ -3,6 +3,7 @@ import favorites from './routes/favorites.js'
 import posts from './routes/posts.js'
 import users from './routes/users.js'
 import express from 'express'
+import client from './db/db.js'
 
 const app = express()
 const port = process.env.PORT || 3000;

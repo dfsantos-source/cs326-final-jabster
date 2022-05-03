@@ -5,18 +5,20 @@
     "main": "server/server.js",
     "type": "module",
     "engines": {
-      "node": "16.11.0"
+        "node": "16.11.0"
     },
     "scripts": {
-      "deploy": "copyfiles client/* client/**/* client/**/**/* server/* server/**/* .env package*.json deploy",
-      "start": "node server/server.js"
+        "deploy": "copyfiles client/* client/**/* client/**/**/* server/* server/**/* .env package*.json deploy",
+        "start": "node server/server.js"
     },
     "dependencies": {
-      "express": "^4.17.3"
+        "dotenv": "^16.0.0",
+        "express": "^4.17.3",
+        "pg": "^8.7.3"
     },
     "devDependencies": {
-      "copyfiles": "^2.4.1"
+        "copyfiles": "^2.4.1"
     },
     "author": "",
     "license": "ISC"
-  }
+}

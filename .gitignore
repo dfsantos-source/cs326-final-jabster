@@ -103,6 +103,8 @@ dist
 # FuseBox cache
 .fusebox/
 
+/deploy
+
 # DynamoDB Local files
 .dynamodb/
 
