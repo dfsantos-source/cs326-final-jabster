@@ -11,7 +11,7 @@ document.getElementById('post').addEventListener('click', async (e) => {
     const post = {
         id: 2,
         name: title,
-        tags: tags,
+        tag: tags,
         user_id: 2,
         cuisine: cuisine,
         likes: 0,

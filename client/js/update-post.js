@@ -34,7 +34,7 @@ document.getElementById('update-button').addEventListener("click", async (event)
         description: descriptionVal,
         ingredients: ingredientsVal.replace(/(\r\n|\n|\r)/gm, ","),
         directions: directionsVal.replace(/(\r\n|\n|\r)/gm, " "),
-        tags: tagsVal,
+        tag: tagsVal,
         cuisine: cuisineVal
     }
 

@@ -1,116 +1,122 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="../styles/grubify.css">
-    <link rel="stylesheet" href="../styles/global.css">
-    <script type="module" src="../js/grubify.js"></script>
-    <title>Guess My Grub</title>
-  </head>
-  <body class="grubify-page">
-    <div class="navbar">
-      <div> 
-        <img src = "../public/images/logo.png" alt="logo" width = 65px padding = 1px> </img>
-        <div class = "home-text link">Home</div>
-        <div class = "grubify-text link">Grubify</div>
-      </div>
-      <div>
-        <div class = "sign-in-text link">Sign In</div>
-        <div class = "register-text link">Register</div>   
-      </div>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="../styles/grubify.css">
+  <link rel="stylesheet" href="../styles/global.css">
+  <script type="module" src="../js/grubify.js"></script>
+  <title>Guess My Grub</title>
+</head>
+
+<body class="grubify-page">
+  <div class="navbar">
+    <div>
+      <img src="../public/images/logo.png" alt="logo" width=65px padding=1px> </img>
+      <div class="home-text link">Home</div>
+      <div class="grubify-text link">Grubify</div>
     </div>
-    <div class="grubify-box">
-      <div class="grubify-wrapper container">
-        <div class="margin-top-large padding-top-large padding-bottom-large">
-          <h1 id="title" class="margin-top-large grubbing-title">What are you grubbing today?</h1>
-          <img class="margin-top-large" src="../public/images/undraw_eating_together_re_ux62.svg" width="400" height="300">
-        </div>
-    
-        <!-- TODO: conditionally render this later on with functionality -->
-        <!-- <h1>Not in the mood?</h1>
+    <div>
+      <div class="sign-in-text link">Sign In</div>
+      <div class="register-text link">Register</div>
+    </div>
+  </div>
+  <div class="grubify-box">
+    <div class="grubify-wrapper container">
+      <div class="margin-top-large padding-top-large padding-bottom-large">
+        <h1 id="title" class="margin-top-large grubbing-title">What are you grubbing today?</h1>
+        <img class="margin-top-large" src="../public/images/undraw_eating_together_re_ux62.svg" width="400"
+          height="300">
+      </div>
+
+      <!-- TODO: conditionally render this later on with functionality -->
+      <!-- <h1>Not in the mood?</h1>
         <button>Grubify again!</button> -->
-    
-        <div class="picky-wrapper margin-top-large container padding-top-large padding-bottom-large">
-          <div class="picky-card">
-            <h3 class="margin-bottom-large">Feeling a little bit picky?</h3>
-            <div class="picky-input">
-              <div>
-                <table class="picky-input-table">
-                  <tr>
-                    <td><label id="diet" class="picky-label">Dietary Restriction</label></td>
-                    <td><label id="cuisine" class="picky-label">Cuisine</label></td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <select>
-                        <option value="vegetarian">None</option>
-                        <option value="vegetarian">Vegetarian</option>
-                        <option value="vegan">Vegan</option>
-                        <option value="nut-free">Nut-free</option>
-                        <option value="pescatarian">Pescatarian</option>
-                        <option value="keto">Keto</option>
-                      </select>
-                    </td>
-                    <td>
-                      <select>
-                        <option value="vegetarian">None</option>
-                        <option value="indian">Indian</option>
-                        <option value="asian">Asian</option>
-                        <option value="italian">Italian</option>
-                        <option value="mexican">Mexican</option>
-                        <option value="japanese">Japanese</option>
-                      </select>
-                    </td>
-                  </tr>
-                </table>
-              </div>
-              <div>
-              </div>
+
+      <div class="picky-wrapper margin-top-large container padding-top-large padding-bottom-large">
+        <div class="picky-card">
+          <h3 class="margin-bottom-large">Feeling a little bit picky?</h3>
+          <div class="picky-input">
+            <div>
+              <table class="picky-input-table">
+                <tr>
+                  <td><label id="diet" class="picky-label">Dietary Restriction</label></td>
+                  <td><label id="cuisine" class="picky-label">Cuisine</label></td>
+                </tr>
+                <tr>
+                  <td>
+                    <select>
+                      <option value="">None</option>
+                      <option value="vegetarian">Vegetarian</option>
+                      <option value="vegan">Vegan</option>
+                      <option value="nut-free">Nut-free</option>
+                      <option value="pescatarian">Pescatarian</option>
+                      <option value="keto">Keto</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select>
+                      <option value="">None</option>
+                      <option value="indian">Indian</option>
+                      <option value="asian">Asian</option>
+                      <option value="italian">Italian</option>
+                      <option value="mexican">Mexican</option>
+                      <option value="japanese">Japanese</option>
+                    </select>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div>
             </div>
           </div>
         </div>
-        <button id ="grubify-butt" type="button" class="margin-top-extra-large button">Grubify!</button>
       </div>
+      <button id="grubify-butt" type="button" class="margin-top-extra-large button">Grubify!</button>
     </div>
-    <div id="grubify-post" class="posts-main">
+  </div>
+  <div id="grubify-post" class="posts-main">
 
-    </div>
-    <div id="posts-main" class="posts-main">
-      <template>
-        <div class="post">
-          <h2 id="grub-post-template-title"></h2>
-          <p id="grub-post-template-author"></p>   
-          <div class="tag-wrapper">
-            <p id="grub-post-template-cuisine" class="cuisine"></p>
-          </div>
-          <hr>               
-          <img id="grub-post-template-img" class="post-img"  alt="Picture of Food" width="75%" >
-          <p id="grub-post-template-description" class="description"></p>
-          <h4>Ingredients:</h4>
-          <hr>
-          <div>
-            <ul id="grub-post-template-ingredients" class="ingredient-ls">
-            </ul>
-          </div>
-          <h4>Directions:</h4>
-          <hr>
-          <div>
-            <ol id="grub-post-template-directions" class="directions">
-            </ol>
-          </div>
-          <p id="grub-post-template-likes" class="likes">Likes: </p>
-          <p id="grub-post-template-dislikes" class="dislikes">Dislikes: </p>
-          <div class="reactions">
-            <img id = "grub-like-img" class="like-img img" src="../public/images/like.png" alt="like" width="35px">
-            <img id = "grub-dislike-img" class="dislike-img img" src="../public/images/dislike.png" alt="dislike" width="35px" >
-          </div>
+  </div>
+  <div id="posts-main" class="posts-main">
+    <template>
+      <div class="post">
+        <h2 id="grub-post-template-title"></h2>
+        <p id="grub-post-template-author"></p>
+        <div class="tag-wrapper">
+          <p id="grub-post-template-cuisine" class="cuisine"></p>
         </div>
-      </template>
-    </div>
-  </body>
+        <hr>
+        <img id="grub-post-template-img" class="post-img" alt="Picture of Food" width="75%">
+        <p id="grub-post-template-description" class="description"></p>
+        <h4>Ingredients:</h4>
+        <hr>
+        <div>
+          <ul id="grub-post-template-ingredients" class="ingredient-ls">
+          </ul>
+        </div>
+        <h4>Directions:</h4>
+        <hr>
+        <div>
+          <ol id="grub-post-template-directions" class="directions">
+          </ol>
+        </div>
+        <p id="grub-post-template-likes" class="likes">Likes: </p>
+        <p id="grub-post-template-dislikes" class="dislikes">Dislikes: </p>
+        <div class="reactions">
+          <img id="grub-like-img" class="like-img img" src="../public/images/like.png" alt="like" width="35px">
+          <img id="grub-dislike-img" class="dislike-img img" src="../public/images/dislike.png" alt="dislike"
+            width="35px">
+        </div>
+      </div>
+    </template>
+  </div>
+</body>
+
 </html>

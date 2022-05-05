@@ -31,9 +31,26 @@ export const getUserPosts = async (userId) => {
 }
 
 export const getRandomPost = async (body) => {
-    const queryText = ""
-    const res = await client.query(queryText)
-    return res.rows
+    if (body.tag === "" && body.cuisine === "") {
+        const queryText = "SELECT * FROM Recipe_Posts"
+        const res = await client.query(queryText)
+        return res.rows
+    }
+    else if (body.tag === "" && body.cuisine !== "") {
+        const queryText = "SELECT * FROM Recipe_Posts WHERE cuisine = $1"
+        const res = await client.query(queryText, [body.cuisine])
+        return res.rows
+    }
+    else if (body.tag !== "" && body.cuisine === "") {
+        const queryText = "SELECT * FROM Recipe_Posts WHERE tag = $1"
+        const res = await client.query(queryText, [body.tag])
+        return res.rows
+    }
+    else {
+        const queryText = "SELECT * FROM Recipe_Posts WHERE tag = $1 AND cuisine = $2"
+        const res = await client.query(queryText, [body.tag, body.cuisine])
+        return res.rows
+    }
 }
 
 export const getPostbyId = async (postId) => {
@@ -54,14 +71,26 @@ export const dislikePost = async (postId) => {
     return res.rows
 }
 
-export const getUserLikes = async (userId) => {
-    const queryText = ""
-    const res = await client.query(queryText)
+export const addUserLikes = async (userId, postId) => {
+    const queryText = "INSERT INTO User_Likes(userId, postId) VALUES ($1, $2) "
+    const res = await client.query(queryText, [userId, postId]);
     return res.rows
 }
 
-export const getUserDislikes = async (userId) => {
-    const queryText = ""
-    const res = await client.query(queryText)
+export const addUserDislikes = async (userId, postId) => {
+    const queryText = "INSERT INTO User_Dislikes(userId, postId) VALUES ($1, $2) "
+    const res = await client.query(queryText, [userId, postId]);
     return res.rows
+}
+
+export const getUserLikes = async (userId, postId) => {
+    const queryText = "SELECT * FROM User_Likes WHERE userId = $1 AND postId = $2";
+    const res = await client.query(queryText, [userId, postId]);
+    return res.rows;
+}
+
+export const getUserDislikes = async (userId, postId) => {
+    const queryText = "SELECT * FROM User_Dislikes WHERE userId = $1 AND postId = $2";
+    const res = await client.query(queryText, [userId, postId]);
+    return res.rows;
 }

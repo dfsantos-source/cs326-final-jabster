@@ -14,6 +14,7 @@ async function initDB() {
     const queryText = `
         CREATE TABLE if not exists Users(
             "id" Serial PRIMARY KEY,
+            "username" VARCHAR(30) UNIQUE
             "email" VARCHAR(255),
             "name" VARCHAR(255),
             "password" VARCHAR(255)

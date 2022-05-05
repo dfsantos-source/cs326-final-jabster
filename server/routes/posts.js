@@ -19,7 +19,7 @@ router.post('/create', async (req, res) => {
     try {
         const id = req.user.id;
         const post = await postQuery.createPost(id, req.body);
-        res.json(post);
+        res.status(200).json(post);
     }
     catch {
         res.status(404).json({ err: 'Error creating post' });
@@ -29,9 +29,9 @@ router.post('/create', async (req, res) => {
 // update a post id
 router.put('/update/:postId', async (req, res) => {
     try {
-        const id = req.params.id;
+        const id = req.params.postId;
         const post = await postQuery.updatePost(id, req.body);
-        res.json(post);
+        res.status(200).json(post);
     }
     catch {
         res.status(404).json({ err: 'Error updating post' });
@@ -41,9 +41,9 @@ router.put('/update/:postId', async (req, res) => {
 // delete a post by id
 router.delete('/delete/:postId', async (req, res) => {
     try {
-        const id = req.params.id;
+        const id = req.params.postId;
         const post = await postQuery.deletePost(id);
-        res.json(post);
+        res.status(200).json(post);
     }
     catch {
         res.status(404).json({ err: 'Error deleting post' });
@@ -52,10 +52,9 @@ router.delete('/delete/:postId', async (req, res) => {
 
 // get all posts
 router.get('/get/all', async (req, res) => {
-
     try {
         const post = await postQuery.getAllPosts();
-        res.json(post);
+        res.stattus(200).json(post);
     }
     catch {
         res.status(404).json({ err: 'Error reading all post' });
@@ -63,11 +62,11 @@ router.get('/get/all', async (req, res) => {
 })
 
 router.get('/get/user/:userId', async (req, res) => {
-    
+
     try {
         const id = req.user.id;
         const post = await postQuery.getUserPosts(id);
-        res.json(post);
+        res.status(200).json(post);
     }
     catch {
         res.status(404).json({ err: `could not get user ${req.params.userId} posts` });
@@ -81,9 +80,11 @@ router.get('/get/user/:userId', async (req, res) => {
 // PUT dislike a certain dish (/postId/dislike):
 
 router.get('/get/random', async (req, res) => {
-    
     try {
-        res.json();
+        const body = req.body
+        const posts = await postQuery.getRandomPost(body)
+        const randomPost = posts[Math.floor(Math.random() * posts.length)]
+        res.status(200).json(randomPost);
     }
     catch {
         res.status(404).json({ err: 'Error getting post' });
@@ -92,9 +93,9 @@ router.get('/get/random', async (req, res) => {
 
 router.get('/get/:postId', async (req, res) => {
     try {
-        const id = req.params.id;
+        const id = req.params.postId;
         const post = await postQuery.getPostbyId(id);
-        res.json(post);
+        res.status(200).json(post);
     }
     catch {
         res.status(404).json({ err: 'Error getting post' });
@@ -104,9 +105,17 @@ router.get('/get/:postId', async (req, res) => {
 
 router.put('/:postId/like', async (req, res) => {
     try {
-        const id = req.params.id;
-        const post = await postQuery.likePost(id);
-        res.json(post);
+        const id = req.params.postId;
+        const userId = req.user.id
+        const userLiked = await postQuery.getUserLikes(userId, id);
+        if (userLiked.length > 0) {
+            res.status(400).json({ message: "user already liked post" })
+        }
+        else {
+            const post = await postQuery.likePost(id);
+            await postQuery.addUserLikes(userId, id)
+            res.status(200).json(post);
+        }
     }
     catch {
         res.status(404).json({ err: 'Error liking post' });
@@ -115,9 +124,17 @@ router.put('/:postId/like', async (req, res) => {
 
 router.put('/:postId/dislike', async (req, res) => {
     try {
-        const id = req.params.id;
-        const post = await postQuery.dislikePost(id);
-        res.json(post);
+        const id = req.params.postId;
+        const userId = req.user.id
+        const userDisliked = await postQuery.getUserDislikes(userId, id);
+        if (userDisliked.length > 0) {
+            res.status(400).json({ message: "user already disliked post" })
+        }
+        else {
+            const post = await postQuery.dislikePost(id);
+            await postQuery.addUserDislikes(userId, id)
+            res.status(200).json(post);
+        }
     }
     catch {
         res.status(404).json({ err: 'Error disliking post' })
