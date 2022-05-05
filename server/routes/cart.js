@@ -1,12 +1,11 @@
 import express from 'express'
 import faker from '@faker-js/faker'
 import cartDB from '../db/cart-db.js'
-import cartDb from '../db/cart-db.js'
 
 const router = express.Router()
 
 router.get("/:userId/get", async(req, res) => {
-    const userId = req.params.userId
+    const userId = req.user.id
     if (userId === undefined) {
         res.status(404).json({ message: "userId not found"});
     }
@@ -14,14 +13,14 @@ router.get("/:userId/get", async(req, res) => {
         const cart = await cartDB.getCart(userId);
         res.status(200).json(cart);
     }
-    catch {
+    catch(err) {
         res.status(404).json(err);
     }
 })
 
 router.post("/:userId/add", async(req, res) => {
     const body = req.body;
-    const userId = req.params.userId;
+    const userId = req.user.id
     if (body === undefined || userId === undefined) {
         res.status(404).json({ messsage: "body or userId not found" });
     }
@@ -35,7 +34,7 @@ router.post("/:userId/add", async(req, res) => {
 })
 
 router.delete("/:userId/delete/:cartId", async(req, res) => {
-    const userId = req.params.userId;
+    const userId = req.user.id
     const cartId = req.params.cartId;
 
     if (userId === undefined || cartId == undefined) {
