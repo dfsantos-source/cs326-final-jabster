@@ -62,7 +62,7 @@ router.get('/get/all', async (req, res) => {
     }
 })
 
-router.get('/get/user/:userId', (req, res) => {
+router.get('/get/user/:userId', async (req, res) => {
     
     try {
         const id = req.user.id;
@@ -80,7 +80,7 @@ router.get('/get/user/:userId', (req, res) => {
 // PUT like a certain dish (/postId/like):
 // PUT dislike a certain dish (/postId/dislike):
 
-router.get('/get/random', (req, res) => {
+router.get('/get/random', async (req, res) => {
     
     try {
         res.json();
@@ -90,7 +90,7 @@ router.get('/get/random', (req, res) => {
     }
 })
 
-router.get('/get/:postId', (req, res) => {
+router.get('/get/:postId', async (req, res) => {
     try {
         const id = req.params.id;
         const post = await postQuery.getPostbyId(id);
@@ -102,7 +102,7 @@ router.get('/get/:postId', (req, res) => {
 })
 
 
-router.put('/:postId/like', (req, res) => {
+router.put('/:postId/like', async (req, res) => {
     try {
         const id = req.params.id;
         const post = await postQuery.likePost(id);
@@ -113,7 +113,7 @@ router.put('/:postId/like', (req, res) => {
     }
 })
 
-router.put('/:postId/dislike', (req, res) => {
+router.put('/:postId/dislike', async (req, res) => {
     try {
         const id = req.params.id;
         const post = await postQuery.dislikePost(id);
