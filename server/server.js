@@ -10,6 +10,7 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import expressSession from 'express-session';
 import auth from './auth.js';
+import logger from 'morgan';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(dirname(__filename));
@@ -26,6 +27,7 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(expressSession(sessionConfig));
+app.use(logger('dev'));
 auth.configure(app);
 
 app.use('/client', express.static('client'));
