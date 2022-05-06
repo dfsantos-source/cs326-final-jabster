@@ -4,21 +4,21 @@ import cartDB from '../db/cart-db.js'
 
 const router = express.Router()
 
-router.get("/:userId/get", async(req, res) => {
+router.get("/user/get", async (req, res) => {
     const userId = req.user.id
     if (userId === undefined) {
-        res.status(404).json({ message: "userId not found"});
+        res.status(404).json({ message: "userId not found" });
     }
     try {
         const cart = await cartDB.getCart(userId);
         res.status(200).json(cart);
     }
-    catch(err) {
+    catch (err) {
         res.status(404).json(err);
     }
 })
 
-router.post("/:userId/add", async(req, res) => {
+router.post("/user/add", async (req, res) => {
     const body = req.body;
     const userId = req.user.id
     if (body === undefined || userId === undefined) {
@@ -28,23 +28,22 @@ router.post("/:userId/add", async(req, res) => {
         const cartItem = await cartDB.addCart(body, userId);
         res.status(200).json(cartItem);
     }
-    catch(err) {
+    catch (err) {
         res.status(404).json(err);
     }
 })
 
-router.delete("/:userId/delete/:cartId", async(req, res) => {
-    const userId = req.user.id
+router.delete("/delete/:cartId", async (req, res) => {
     const cartId = req.params.cartId;
 
-    if (userId === undefined || cartId == undefined) {
+    if (cartId == undefined) {
         res.status(404).json({ messsage: "userId or cartId not found" });
     }
     try {
         const deleted = await cartDB.deleteCart(cartId);
         res.status(200).json(deleted);
     }
-    catch(err) {
+    catch (err) {
         res.status(404).json(err);
     }
 })
