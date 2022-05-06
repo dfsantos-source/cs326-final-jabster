@@ -1,21 +1,28 @@
 import client from "./db.js";
 
 export const registerUser = async (body) => {
-    const queryText = "INSERT INTO Users(username, email, name, password) VALUES ($1, $2, $3, $4)"
+    const queryText = "INSERT INTO Users(username, email, name, password) VALUES ($1, $2, $3, $4) RETURNING *"
     const res = await client.query(queryText, [body.username, body.email, body.name, body.password])
     return res.rows
 }
 
-const updatePassword = async (userId, body) => {
-    const queryText = "UPDATE Users SET password = $1 WHERE id = $2"
+export const updatePassword = async (userId, body) => {
+    const queryText = "UPDATE Users SET password = $1 WHERE id = $2 RETURNING *"
     const res = await client.query(queryText, [body.password, userId])
     return res.rows
 }
 
-const updateName = async (userId, body) => {
-    const queryText = "UPDATE Users SET username = $1 WHERE id = $2"
+export const updateName = async (userId, body) => {
+    const queryText = "UPDATE Users SET username = $1 WHERE id = $2 RETURNING *"
     const res = await client.query(queryText, [body.username, userId])
     return res.rows
+}
+
+export const findUserById = async (id) => {
+    const queryText = 'SELECT * FROM Users WHERE id = $1'
+
+    const res = await client.query(queryText, [id]);
+    return res.rows;
 }
 
 // // auth methods
