@@ -1,31 +1,25 @@
 import client from "./db.js";
 
-const loginUser = async (body) => {
-    const queryText = ""
-    const res = await client.query(queryText)
-    return res.rows
-}
-
 export const registerUser = async (body) => {
-    const queryText = ""
-    const res = await client.query(queryText)
+    const queryText = "INSERT INTO Users(username, email, name, password) VALUES ($1, $2, $3, $4)"
+    const res = await client.query(queryText, [body.username, body.email, body.name, body.password])
     return res.rows
 }
 
 const updatePassword = async (userId, body) => {
-    const queryText = ""
-    const res = await client.query(queryText)
+    const queryText = "UPDATE Users SET password = $1 WHERE id = $2"
+    const res = await client.query(queryText, [body.password, userId])
     return res.rows
 }
 
 const updateName = async (userId, body) => {
-    const queryText = ""
-    const res = await client.query(queryText)
+    const queryText = "UPDATE Users SET username = $1 WHERE id = $2"
+    const res = await client.query(queryText, [body.username, userId])
     return res.rows
 }
 
 // // auth methods
-export const findUser = async(username) => {
+export const findUser = async (username) => {
     const queryText = `
         SELECT * FROM Users WHERE username=($1)
     `
@@ -33,7 +27,7 @@ export const findUser = async(username) => {
     return res.rows
 }
 
-export const validateUser = async(username, password) => {
+export const validateUser = async (username, password) => {
     const queryText = `
         SELECT * FROM Users WHERE username=($1) and password=($2)
     `
