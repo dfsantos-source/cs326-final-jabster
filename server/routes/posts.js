@@ -1,5 +1,5 @@
 import express from 'express'
-import * as postQuery from './db/posts-db.js'
+import * as postQuery from '../db/posts-db.js'
 
 const app = express()
 const router = express.Router()
@@ -21,8 +21,8 @@ router.post('/create', async (req, res) => {
         const post = await postQuery.createPost(id, req.body);
         res.status(200).json(post);
     }
-    catch {
-        res.status(404).json({ err: 'Error creating post' });
+    catch (error) {
+        res.status(404).json({ err: error });
     }
 })
 
@@ -54,15 +54,14 @@ router.delete('/delete/:postId', async (req, res) => {
 router.get('/get/all', async (req, res) => {
     try {
         const post = await postQuery.getAllPosts();
-        res.stattus(200).json(post);
+        res.status(200).json(post);
     }
     catch {
         res.status(404).json({ err: 'Error reading all post' });
     }
 })
 
-router.get('/get/user/:userId', async (req, res) => {
-
+router.get('/get/user', async (req, res) => {
     try {
         const id = req.user.id;
         const post = await postQuery.getUserPosts(id);
