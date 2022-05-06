@@ -2,7 +2,7 @@ import client from "./db.js";
 
 const getCart = async (userId) => {
     const queryText = `
-        SELECT * FROM Cart_Item WHERE id=($1) RETURNING *
+        SELECT * FROM Cart_Item WHERE id=($1)
     `;
     const res = await client.query(queryText, [userId]);
     return res.rows;
@@ -18,7 +18,7 @@ const addCart = async (body, userId) => {
 
 const deleteCart = async (cartId) => {
     const queryText = `
-        DELETE FROM Cart_Item WHERE id=($1) RETURNING *
+        DELETE FROM Cart_Item WHERE id=($1)
     `;
     const res = await client.query(queryText, [cartId]);
     return res.rows;
