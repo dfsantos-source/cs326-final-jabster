@@ -20,53 +20,70 @@
     <div class="posts-page">
         <div class="navbar">
             <div>
-                <img src="../public/images/logo.png" alt="logo" width=65px padding=1px> </img>
-                <div class="home-text link">Home</div>
-                <div class="grubify-text link">Grubify</div>
+                <a href="/home"><img src="../public/images/logo.png" alt="logo" width=65px padding=1px> </img></a>
+                <a href="/home">
+                    <div>Home</div>
+                </a>
+                <a href="/">
+                    <div>Grubify</div>
+                </a>
+                <a href="/all-posts">
+                    <div>Posts</div>
+                </a>
+                <a href="/my-posts">
+                    <div>My Posts</div>
+                </a>
+                <a href="/create-post">
+                    <div>Create Post</div>
+                </a>
             </div>
             <div>
-                <div class="sign-in-text link">Sign In</div>
-                <div class="register-text link">Register</div>
+                <a href="/profile">
+                    <div>Profile</div>
+                </a>
+                <a href="/logout">
+                    <div>Logout</div>
+                </a>
             </div>
         </div>
         <div class="grubify">
             <div class="grubify-content">My Posts</div>
         </div>
-        <div id="posts-main" class="posts-main">
-            <template>
-                <div class="post">
-                    <div class="post-header">
-                        <div class="post-header-info">
-                            <h2 id="post-template-title"></h2>
-                            <p id="post-template-author"></p>
-                            <div class="tag-wrapper">
-                                <p id="post-template-cuisine" class="cuisine"></p>
-                            </div>
-                        </div>
-                        <div class="post-buttons">
-                            <button id="update-button" class="button"> Update </button>
-                            <button id="delete-button" class="button"> Delete </button>
+        <template>
+            <div class="post">
+                <div class="post-header">
+                    <div class="post-header-info">
+                        <h2 id="post-template-title"></h2>
+                        <p id="post-template-author"></p>
+                        <div class="tag-wrapper">
+                            <p id="post-template-cuisine" class="cuisine"></p>
                         </div>
                     </div>
-                    <hr>
-                    <img id="post-template-img" class="post-img" alt="Picture of Food" width="75%">
-                    <p id="post-template-description" class="description"></p>
-                    <h4>Ingredients:</h4>
-                    <hr>
-                    <div>
-                        <ul id="post-template-ingredients" class="ingredient-ls">
-                        </ul>
+                    <div class="post-buttons">
+                        <button id="update-button" class="button"> Update </button>
+                        <button id="delete-button" class="button"> Delete </button>
                     </div>
-                    <h4>Directions:</h4>
-                    <hr>
-                    <div>
-                        <ol id="post-template-directions" class="directions">
-                        </ol>
-                    </div>
-                    <p id="post-template-likes" class="likes">Likes: </p>
-                    <p id="post-template-dislikes" class="dislikes">Dislikes: </p>
                 </div>
-            </template>
+                <hr>
+                <img id="post-template-img" class="post-img" alt="Picture of Food" width="75%">
+                <p id="post-template-description" class="description"></p>
+                <h4>Ingredients:</h4>
+                <hr>
+                <div>
+                    <ul id="post-template-ingredients" class="ingredient-ls">
+                    </ul>
+                </div>
+                <h4>Directions:</h4>
+                <hr>
+                <div>
+                    <ol id="post-template-directions" class="directions">
+                    </ol>
+                </div>
+                <p id="post-template-likes" class="likes">Likes: </p>
+                <p id="post-template-dislikes" class="dislikes">Dislikes: </p>
+            </div>
+        </template>
+        <div id="posts-main" class="posts-main">
         </div>
     </div>
 </body>
