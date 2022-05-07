@@ -1,54 +1,54 @@
-#Title: Team 10 Jabster
+# Title: Team 10 Jabster
 
-#Subtitle: Guess my Grub
-#Semester: Spring 2022
-#Overview: 
+# Subtitle: Guess my Grub
+# Semester: Spring 2022
+# Overview: 
 Our app is a social media app about Food Recipes. Users are able to make posts about recipes that they know or have made and share them on our web app. The main feature of the app is that users can get a random recipe based on the tags and cuisine they select. This can users decide what to eat or cook when they are having trouble picking food to eat. There are a lot of Recipe Websites out there, but there aren't many that are social media sites that allows users to get random meals based on tags and cuisine and allows them to save their favorites and shopping cart, which makes our app innovative.
 
-#Team Members: 
+# Team Members: 
  Aayush Bhagat (Github: Aayush-Bhagat)  
  Dane Santos (Github: dfsantos-source)  
  Ali Rabeea (Github: alirabeea)  
  Nolan LaRochelle (Github: LaRochelleNolan)  
 
-#User Interface: 
+# User Interface: 
 
-###Homepage
+### Homepage
 **A view of what the website is about and the mission**
 ![Homepage](images/final-ui/home.png)
 
-###Grubify
+### Grubify
 **A view where the user can select the a tag and cuisine and get a random recipe based on the filters**
 ![Grubify](images/final-ui/grubify.png)
 
-###Posts 
+### Posts 
 **A view where the a user can see all of the Recipe Posts that users make**
 ![Posts](images/final-ui/posts.png)
 
-###My-Posts
+### My-Posts
 **A view where the user can see aall of the recipe posts that you have made**
 ![my-posts](images/final-ui/my-posts.png)
 
-###Create Post
+### Create Post
 **A view where the user can create their own recipe post**
 ![create-post](images/final-ui//create-post.png)
 
-###Update Post 
+### Update Post 
 **A view where the user can update a post that they have made**
 ![updte-post](images/final-ui//update-post.png)
 
-###Login
+### Login
 **A view where the user can login into their account**
 ![login](images/final-ui/login.png)
 
-###Register
+### Register
 **A view where a user can register an account for the app**
 ![Register](images/final-ui/register.png)
 
-#APIs:
+# APIs:
 #### Posts Endpoints
 
-POST create a post `(/posts/create)`: 
+POST create a post `(/posts/create)`:   
 Allows a user to create a new Recipe post  
 ```
     Request Body: {  
@@ -61,7 +61,7 @@ Allows a user to create a new Recipe post
     }  
 ```
 
-PUT update a post `(/posts/update/:postId)`: 
+PUT update a post `(/posts/update/:postId)`:   
 Allows user to update their own posts  
 ```
     Request Body: {  
@@ -74,7 +74,7 @@ Allows user to update their own posts
     }  
 ```
   
-DELETE a post `(/posts/delete/:postId)`:
+DELETE a post `(/posts/delete/:postId)`:  
 Allows a user to delete one of their posts   
 ```
     Params: {
@@ -82,13 +82,13 @@ Allows a user to delete one of their posts
     }
 ```
 
-GET read all posts `(/posts/get/all)`: 
+GET read all posts `(/posts/get/all)`:   
 Returns all of the posts from the database so the user can see all posts
 
-GET read all user posts `(/posts/get/user)`: 
+GET read all user posts `(/posts/get/user)`:  
 Returns all of the posts that specific user has posted
 
-GET read a random post, given a tag and cuisine preference `(/get/random/:tag&:cuisine)`: 
+GET read a random post, given a tag and cuisine preference `(/get/random/:tag&:cuisine)`:  
 Returns a random post with optional tags and cuisine preferences
 ```
     Params: {
@@ -97,7 +97,7 @@ Returns a random post with optional tags and cuisine preferences
     }
 ```
 
-GET read a specific post `(/posts/get/:postId)`: 
+GET read a specific post `(/posts/get/:postId)`:   
 Returns the posts object for the specific post 
 ```   
     Params: {
@@ -105,7 +105,7 @@ Returns the posts object for the specific post
     }
 ```
 
-PUT Like a specific post `(/posts/:postId/like)`: 
+PUT Like a specific post `(/posts/:postId/like)`:   
 Updates the likes and returns the posts object for the specific post. Only occurs if a user has not already liked the post. 
 ```   
     Params: {
@@ -113,7 +113,7 @@ Updates the likes and returns the posts object for the specific post. Only occur
     }
 ```
 
-PUT Dislike a specific post `(/posts/:postId/dislike)`: 
+PUT Dislike a specific post `(/posts/:postId/dislike)`:  
 Updates the dislikes and returns the posts object for the specific post. Only occurs if a user has not already disliked the post. 
 ```   
     Params: {
@@ -123,7 +123,7 @@ Updates the dislikes and returns the posts object for the specific post. Only oc
 
 
 #### User Endpoints
- POST register `(/user/register)`: 
+ POST register `(/user/register)`:  
  Allows a user to register an account for the web app  
 ```
 Request Body: {  
@@ -135,22 +135,22 @@ Request Body: {
 ```
 
 
- GET Get user data `(/user/get/user)`:
+ GET Get user data `(/user/get/user)`:  
  Gets a specific user's data  
 
 #### User Authorization Endpoints
-POST login `(/login)`: 
+POST login `(/login)`:   
 Allows a user to log into an account for the web app. Passport.js processes username and password on login.
 
-GET logout `(/logout)`: 
+GET logout `(/logout)`:   
 Allows a user to log out of an account for the web app
 
 #### User Favorites Endpoint
- GET read users favorite dishes `(user/favorites/get)`:
+ GET read users favorite dishes `(user/favorites/get)`:  
  Gets a user's favorite dishes  
 
 
- POST add favorite dish `(user/favorites/add)`: 
+ POST add favorite dish `(user/favorites/add)`:   
  Allows a user to add a dish to their favorites list   
 ```
 Request Body: {
@@ -158,7 +158,7 @@ Request Body: {
 }
 ```
 
- DELETE favorite dish `(user/favorites/delete/:favoriteID)`: 
+ DELETE favorite dish `(user/favorites/delete/:favoriteID)`:   
  Allows a user to remove a dish from their favorites list  
 ```
 Params: {
@@ -167,10 +167,10 @@ Params: {
 ```
 
 #### User Cart Endpoints
- GET read a cart `(user/cart/user/get)`: 
+ GET read a cart `(user/cart/user/get)`:   
  Allows a user to get the ingredients from their cart
 
- POST create an ingredient and add to User cart `(user/cart/user/add)`: 
+ POST create an ingredient and add to User cart `(user/cart/user/add)`:   
  Allows a user to add an ingredient to their cart
 ```
 Request Body: {
@@ -179,7 +179,7 @@ Request Body: {
 }  
 ```
 
- DELETE item from cart `(user/cart/delete/:cartId)`: 
+ DELETE item from cart `(user/cart/delete/:cartId)`:   
  Allows a user to delete an ingredient from their cart
 ```
 Params: {
@@ -187,9 +187,9 @@ Params: {
 }   
 ```
 
-#Database: 
+# Database: 
 
-###Users table
+### Users table
 Table to keep user data
 | Column   | Data Type | Description                         |
 | -------- | --------- | ----------------------------------- |
@@ -198,7 +198,7 @@ Table to keep user data
 | name     | String    | the users name                      |
 | password | String    | THe password the user uses to login |
 
-###Recipe_Posts
+### Recipe_Posts
 Table to keep the Recipes that users create
 | Column      | Data Type | Description                                 |
 | ----------- | --------- | ------------------------------------------- |
@@ -214,7 +214,7 @@ Table to keep the Recipes that users create
 | ingredients | String    | String of all the ingredients               |
 | tag         | String    | tag associated with recipe ex: vegan, halal |
 
-###User_Favorites
+### User_Favorites
 Table to keep all of the recipe posts a User has favorited
 | Column | Data Type | Description                          |
 | ------ | --------- | ------------------------------------ |
@@ -222,7 +222,7 @@ Table to keep all of the recipe posts a User has favorited
 | userId | Integer   | Foreign Key Ref User id              |
 | postId | Integer   | Foreign Key Ref Recipe_Posst id      |
 
-###Cart_Item
+### Cart_Item
 Table to keep the items the user needs in a shopping cart
 | Column | Data Type | Description                              |
 | ------ | --------- | ---------------------------------------- |
@@ -231,7 +231,7 @@ Table to keep the items the user needs in a shopping cart
 | name   | String    | name of the ingredient for shopping cart |
 | amount | String    | amount of the ingredient the user needs  |
 
-###User_Likes
+### User_Likes
 Table to keep all of 
 | Column | Data Type | Description                      |
 | ------ | --------- | -------------------------------- |
@@ -239,7 +239,7 @@ Table to keep all of
 | userId | Integer   | Foreign Key Ref User id          |
 | postId | String    | Foreign Key Ref Recipe_Post id   |
 
-###User_Disikes
+### User_Disikes
 Table to keep all of the recipe posts a User has favorited
 | Column | Data Type | Description                         |
 | ------ | --------- | ----------------------------------- |
@@ -247,7 +247,7 @@ Table to keep all of the recipe posts a User has favorited
 | userId | Integer   | Foreign Key Ref User id             |
 | postId | String    | Foreign Key Ref Recipe_Post id      |
 
-#URL Routes/Mappings: 
+# URL Routes/Mappings: 
 | Route        | Authenticated | view              | Description                                                                                                                             |
 | ------------ | ------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | /home        | yes           | hompage view      | Used to route the user to the hompage                                                                                                   |
@@ -260,7 +260,7 @@ Table to keep all of the recipe posts a User has favorited
 | /profile     | yes           | user profile view | used to route users to the user profile view so that users can see theri user info and also see their favorites and their shopping cart |
 
 
-#Authentication/Authorization: 
+# Authentication/Authorization: 
 Users are authenticated through Passport js. 
 To register a user needs to enter: 
 ``` 
