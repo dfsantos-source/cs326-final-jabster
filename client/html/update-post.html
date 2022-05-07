@@ -19,13 +19,30 @@
     <div class="posts-page">
         <div class="navbar">
             <div>
-                <img src="../public/images/logo.png" alt="logo" width=65px padding=1px> </img>
-                <div class="home-text link">Home</div>
-                <div class="grubify-text link">Grubify</div>
+                <a href="/home"><img src="../public/images/logo.png" alt="logo" width=65px padding=1px> </img></a>
+                <a href="/home">
+                    <div>Home</div>
+                </a>
+                <a href="/">
+                    <div>Grubify</div>
+                </a>
+                <a href="/all-posts">
+                    <div>Posts</div>
+                </a>
+                <a href="/my-posts">
+                    <div>My Posts</div>
+                </a>
+                <a href="/create-post">
+                    <div>Create Post</div>
+                </a>
             </div>
             <div>
-                <div class="sign-in-text link">Sign In</div>
-                <div class="register-text link">Register</div>
+                <a href="/profile">
+                    <div>Profile</div>
+                </a>
+                <a href="/logout">
+                    <div>Logout</div>
+                </a>
             </div>
         </div>
         <div class="grubify-box">
@@ -69,22 +86,28 @@
                                     <tr>
                                         <td>
                                             <select id="tags">
-                                                <option value="vegetarian">None</option>
-                                                <option value="vegetarian">Vegetarian</option>
-                                                <option value="vegan">Vegan</option>
-                                                <option value="nut-free">Nut-free</option>
-                                                <option value="pescatarian">Pescatarian</option>
-                                                <option value="keto">Keto</option>
+                                                <option value="none">None</option>
+                                                <option value="Vegetarian">Vegetarian</option>
+                                                <option value="Vegan">Vegan</option>
+                                                <option value="Nut-free">Nut-free</option>
+                                                <option value="Pescatarian">Pescatarian</option>
+                                                <option value="Keto">Keto</option>
+                                                <option value="Halal">Halal</option>
                                             </select>
                                         </td>
                                         <td>
                                             <select id="cuisine">
-                                                <option value="vegetarian">None</option>
-                                                <option value="indian">Indian</option>
-                                                <option value="asian">Asian</option>
-                                                <option value="italian">Italian</option>
-                                                <option value="mexican">Mexican</option>
-                                                <option value="japanese">Japanese</option>
+                                                <option value="none">None</option>
+                                                <option value="Indian">Indian</option>
+                                                <option value="Asian">Asian</option>
+                                                <option value="Italian">Italian</option>
+                                                <option value="Mexican">Mexican</option>
+                                                <option value="Japanese">Japanese</option>
+                                                <option value="Chinese">Chinese</option>
+                                                <option value="Latin">Latin</option>
+                                                <option value="Middle Eastern">Middle Eastern</option>
+                                                <option value="Mediterranean">Mediterranean</option>
+                                                <option value="African">African</option>
                                             </select>
                                         </td>
                                     </tr>

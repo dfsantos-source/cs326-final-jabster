@@ -1,13 +1,17 @@
-const res = await fetch("/posts/get/1", {
+const updateId = window.localStorage.getItem('update-id');
+
+const res = await fetch(`/posts/get/${updateId}`, {
     method: "GET",
     headers: {
         'Content-Type': 'application/json',
     },
 })
 
-const data = await res.json()
+const fetched = await res.json()
 
+const data = fetched[0]
 console.log(data)
+
 
 const title = document.getElementById('title');
 const description = document.getElementById('description');
@@ -18,8 +22,10 @@ const cuisine = document.getElementById('cuisine');
 
 title.value = data.name
 description.value = data.description
-ingredients.value = data.ingredients.join('\n')
-directions.value = data.directions.join("\n")
+ingredients.value = data.ingredients
+directions.value = data.directions
+tags.value = data.tag
+cuisine.value = data.cuisine
 
 document.getElementById('update-button').addEventListener("click", async (event) => {
     const titleVal = document.getElementById('title').value;
@@ -38,7 +44,7 @@ document.getElementById('update-button').addEventListener("click", async (event)
         cuisine: cuisineVal
     }
 
-    const response = await fetch(`/posts/update/${data.id}`, {
+    const response = await fetch(`/posts/update/${updateId}`, {
         method: "PUT",
         headers: {
             'Content-Type': 'application/json',
@@ -47,5 +53,7 @@ document.getElementById('update-button').addEventListener("click", async (event)
     })
     const dataRes = await response.json()
     console.log(dataRes)
+    localStorage.removeItem('update-id');
+    window.location.href = "my-posts.html"
 
 })
