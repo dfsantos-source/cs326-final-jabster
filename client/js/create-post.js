@@ -1,3 +1,21 @@
+let base64String = "";
+const imageUploaded = () => {
+    var file = document.querySelector(
+        'input[type=file]')['files'][0];
+
+    var reader = new FileReader();
+    console.log("next");
+
+    reader.onload = function () {
+        base64String = reader.result.replace("data:", "")
+            .replace(/^.+,/, "");
+
+        console.log(base64String);
+    }
+    reader.readAsDataURL(file);
+}
+document.getElementById('fileId').onchange = imageUploaded;
+
 document.getElementById('post').addEventListener('click', async (e) => {
 
 
@@ -6,19 +24,17 @@ document.getElementById('post').addEventListener('click', async (e) => {
     const ingredients = document.getElementById('ingredients').value;
     const directions = document.getElementById('directions').value;
     const tags = document.getElementById('tags').value;
+    const image = base64String;
     const cuisine = document.getElementById('cuisine').value;
 
     const post = {
-        id: 2,
         name: title,
         tag: tags,
-        user_id: 2,
         cuisine: cuisine,
-        likes: 0,
-        dislikes: 0,
         description: description,
         directions: directions,
-        ingredients: ingredients
+        ingredients: ingredients,
+        image: image
     }
 
     console.log(post)
@@ -34,6 +50,6 @@ document.getElementById('post').addEventListener('click', async (e) => {
     const status = await res.status
 
     if (status === 200) {
-        window.location.href = "/client/html/posts.html";
+        window.location.href = "my-posts.html";
     }
 })
