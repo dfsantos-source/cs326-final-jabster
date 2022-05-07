@@ -46,7 +46,146 @@ Our app is a social media app about Food Recipes. Users are able to make posts a
 ![Register](images/final-ui/register.png)
 
 #APIs:
- A final up-to-date list/table describing your application’s API
+#### Posts Endpoints
+
+POST create a post `(/posts/create)`: 
+Allows a user to create a new Recipe post  
+```
+    Request Body: {  
+        name: String
+        cusine: String  
+        description: String  
+        directions: String  
+        ingredients: String  
+        tag: String
+    }  
+```
+
+PUT update a post `(/posts/update/:postId)`: 
+Allows user to update their own posts  
+```
+    Request Body: {  
+        name: String
+        cusine: String  
+        description: String  
+        directions: String  
+        ingredients: String  
+        tag: String
+    }  
+```
+  
+DELETE a post `(/posts/delete/:postId)`:
+Allows a user to delete one of their posts   
+```
+    Params: {
+        post_id: number  
+    }
+```
+
+GET read all posts `(/posts/get/all)`: 
+Returns all of the posts from the database so the user can see all posts
+
+GET read all user posts `(/posts/get/user)`: 
+Returns all of the posts that specific user has posted
+
+GET read a random post, given a tag and cuisine preference `(/get/random/:tag&:cuisine)`: 
+Returns a random post with optional tags and cuisine preferences
+```
+    Params: {
+        tag: String
+        cuisine: String
+    }
+```
+
+GET read a specific post `(/posts/get/:postId)`: 
+Returns the posts object for the specific post 
+```   
+    Params: {
+        post_id: number   
+    }
+```
+
+PUT Like a specific post `(/posts/:postId/like)`: 
+Updates the likes and returns the posts object for the specific post. Only occurs if a user has not already liked the post. 
+```   
+    Params: {
+        post_id: number   
+    }
+```
+
+PUT Dislike a specific post `(/posts/:postId/dislike)`: 
+Updates the dislikes and returns the posts object for the specific post. Only occurs if a user has not already disliked the post. 
+```   
+    Params: {
+        post_id: number   
+    }
+```
+
+
+#### User Endpoints
+ POST register `(/user/register)`: 
+ Allows a user to register an account for the web app  
+```
+Request Body: {  
+    username: String
+    email: String  
+    name: String  
+    password: String  
+}  
+```
+
+
+ GET Get user data `(/user/get/user)`:
+ Gets a specific user's data  
+
+#### User Authorization Endpoints
+POST login `(/login)`: 
+Allows a user to log into an account for the web app. Passport.js processes username and password on login.
+
+GET logout `(/logout)`: 
+Allows a user to log out of an account for the web app
+
+#### User Favorites Endpoint
+ GET read users favorite dishes `(user/favorites/get)`:
+ Gets a user's favorite dishes  
+
+
+ POST add favorite dish `(user/favorites/add)`: 
+ Allows a user to add a dish to their favorites list   
+```
+Request Body: {
+    postId: number   
+}
+```
+
+ DELETE favorite dish `(user/favorites/delete/:favoriteID)`: 
+ Allows a user to remove a dish from their favorites list  
+```
+Params: {
+    favoriteID: number  
+}
+```
+
+#### User Cart Endpoints
+ GET read a cart `(user/cart/user/get)`: 
+ Allows a user to get the ingredients from their cart
+
+ POST create an ingredient and add to User cart `(user/cart/user/add)`: 
+ Allows a user to add an ingredient to their cart
+```
+Request Body: {
+    name: String
+    amount: String
+}  
+```
+
+ DELETE item from cart `(user/cart/delete/:cartId)`: 
+ Allows a user to delete an ingredient from their cart
+```
+Params: {
+    cartId: number  
+}   
+```
 
 #Database: 
 
