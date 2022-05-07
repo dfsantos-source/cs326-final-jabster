@@ -1,6 +1,6 @@
-#Database Schema
+# Database Schema
 
-###Users table
+### Users table
 Table to keep user data
 | Column   | Data Type | Description                         |
 | -------- | --------- | ----------------------------------- |
@@ -9,7 +9,7 @@ Table to keep user data
 | name     | String    | the users name                      |
 | password | String    | THe password the user uses to login |
 
-###Recipe_Posts
+### Recipe_Posts
 Table to keep the Recipes that users create
 | Column      | Data Type | Description                                 |
 | ----------- | --------- | ------------------------------------------- |
@@ -25,7 +25,7 @@ Table to keep the Recipes that users create
 | ingredients | String    | String of all the ingredients               |
 | tag         | String    | tag associated with recipe ex: vegan, halal |
 
-###User_Favorites
+### User_Favorites
 Table to keep all of the recipe posts a User has favorited
 | Column | Data Type | Description                          |
 | ------ | --------- | ------------------------------------ |
@@ -33,7 +33,7 @@ Table to keep all of the recipe posts a User has favorited
 | userId | Integer   | Foreign Key Ref User id              |
 | postId | Integer   | Foreign Key Ref Recipe_Posst id      |
 
-###Cart_Item
+### Cart_Item
 Table to keep the items the user needs in a shopping cart
 | Column | Data Type | Description                              |
 | ------ | --------- | ---------------------------------------- |
@@ -42,7 +42,7 @@ Table to keep the items the user needs in a shopping cart
 | name   | String    | name of the ingredient for shopping cart |
 | amount | String    | amount of the ingredient the user needs  |
 
-###User_Likes
+### User_Likes
 Table to keep all of 
 | Column | Data Type | Description                      |
 | ------ | --------- | -------------------------------- |
@@ -50,7 +50,7 @@ Table to keep all of
 | userId | Integer   | Foreign Key Ref User id          |
 | postId | String    | Foreign Key Ref Recipe_Post id   |
 
-###User_Disikes
+### User_Disikes
 Table to keep all of the recipe posts a User has favorited
 | Column | Data Type | Description                         |
 | ------ | --------- | ----------------------------------- |
@@ -58,12 +58,12 @@ Table to keep all of the recipe posts a User has favorited
 | userId | Integer   | Foreign Key Ref User id             |
 | postId | String    | Foreign Key Ref Recipe_Post id      |
 
-#Division of Labor
+# Division of Labor
 
-####Aayush:
+#### Aayush:
 
-####Dane:
+#### Dane:
 
-####Ali: 
+#### Ali: 
 
-####Nolan:
+#### Nolan:
