@@ -13,35 +13,44 @@ export const updatePost = async (postId, body) => {
 }
 
 export const deletePost = async (postId) => {
-    const queryText = "DELETE FROM Recipe_Posts WHERE id = ($1)";
-    const res = await client.query(queryText, [postId]);
+    const queryText1 = `DELETE FROM User_Favorites WHERE postId = ($1);`
+    const res1 = await client.query(queryText1, [postId])
+
+    const queryText2 = `DELETE FROM User_Likes WHERE postId = ($1);`
+    const res2 = await client.query(queryText2, [postId])
+
+    const queryText3 = `DELETE FROM User_Dislikes WHERE postId = ($1);`
+    const res3 = await client.query(queryText3, [postId])
+
+    const queryText4 = `DELETE FROM Recipe_Posts WHERE id = ($1);`
+    const res = await client.query(queryText4, [postId]);
     return res.rows
 }
 
 export const getAllPosts = async () => {
-    const queryText = "SELECT * FROM Recipe_Posts";
+    const queryText = "SELECT * FROM Recipe_Posts ORDER BY id desc";
     const res = await client.query(queryText)
     return res.rows
 }
 
 export const getUserPosts = async (userId) => {
-    const queryText = "SELECT * FROM Recipe_Posts WHERE userId = ($1)";
+    const queryText = "SELECT * FROM Recipe_Posts WHERE userId = ($1) Order by id desc";
     const res = await client.query(queryText, [userId]);
     return res.rows
 }
 
 export const getRandomPost = async (body) => {
-    if (body.tag === "" && body.cuisine === "") {
+    if (body.tag === "none" && body.cuisine === "none") {
         const queryText = "SELECT * FROM Recipe_Posts"
         const res = await client.query(queryText)
         return res.rows
     }
-    else if (body.tag === "" && body.cuisine !== "") {
+    else if (body.tag === "none" && body.cuisine !== "none") {
         const queryText = "SELECT * FROM Recipe_Posts WHERE cuisine = $1"
         const res = await client.query(queryText, [body.cuisine])
         return res.rows
     }
-    else if (body.tag !== "" && body.cuisine === "") {
+    else if (body.tag !== "none" && body.cuisine === "none") {
         const queryText = "SELECT * FROM Recipe_Posts WHERE tag = $1"
         const res = await client.query(queryText, [body.tag])
         return res.rows

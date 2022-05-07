@@ -18,6 +18,7 @@ const router = express.Router()
 router.post('/create', async (req, res) => {
     try {
         const id = req.user.id;
+        console.log(id)
         const post = await postQuery.createPost(id, req.body);
         res.status(200).json(post);
     }
@@ -78,9 +79,9 @@ router.get('/get/user', async (req, res) => {
 // PUT like a certain dish (/postId/like):
 // PUT dislike a certain dish (/postId/dislike):
 
-router.get('/get/random', async (req, res) => {
+router.get('/get/random/:tag&:cuisine', async (req, res) => {
     try {
-        const body = req.body
+        const body = req.params
         const posts = await postQuery.getRandomPost(body)
         const randomPost = posts[Math.floor(Math.random() * posts.length)]
         res.status(200).json(randomPost);

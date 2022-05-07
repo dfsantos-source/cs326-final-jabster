@@ -36,12 +36,12 @@ router.post("/user/add", async (req, res) => {
 router.delete("/delete/:cartId", async (req, res) => {
     const cartId = req.params.cartId;
 
-    if (cartId == undefined) {
+    if (cartId === undefined) {
         res.status(404).json({ messsage: "userId or cartId not found" });
     }
     try {
         const deleted = await cartDB.deleteCart(cartId);
-        res.status(200).json(deleted);
+        res.status(200).json({ message: "succesfully deleted" });
     }
     catch (err) {
         res.status(404).json(err);

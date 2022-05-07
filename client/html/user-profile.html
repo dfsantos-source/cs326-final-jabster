@@ -18,44 +18,55 @@
 <body>
   <div class="navbar">
     <div>
-      <img src="../public/images/logo.png" alt="logo" width=65px padding=1px> </img>
-      <div class="home-text link">Home</div>
-      <div class="grubify-text link">Grubify</div>
+      <a href="/home"><img src="../public/images/logo.png" alt="logo" width=65px padding=1px> </img></a>
+      <a href="/home">
+        <div>Home</div>
+      </a>
+      <a href="/">
+        <div>Grubify</div>
+      </a>
+      <a href="/all-posts">
+        <div>Posts</div>
+      </a>
+      <a href="/my-posts">
+        <div>My Posts</div>
+      </a>
+      <a href="/create-post">
+        <div>Create Post</div>
+      </a>
     </div>
     <div>
-      <div class="sign-in-text link">Sign In</div>
-      <div class="register-text link">Register</div>
+      <a href="/profile">
+        <div>Profile</div>
+      </a>
+      <a href="/logout">
+        <div>Logout</div>
+      </a>
     </div>
   </div>
 
   <h1 class="profile">User Profile</h1>
   <div class="user-wrapper">
     <div class="user-info box">
-      <img class="profile-pic" src="../public/images/User_profile.jpeg" height="150px" width="150px" alt="">
-      <h1 class="name">Eric</h1>
-      <p class="username">@CoolGuyEric</p>
-      <button class="change-button" id="change-username">Change Username</button>
-      <div id="change-username-form"></div>
-      <br>
-      <button class="change-button" id="change-pass">Change Password</button>
-      <div id="change-password-form"></div>
+      <h1 id="name" class="name"></h1>
+      <p id="username" class="username"></p>
     </div>
     <div class="user-food box">
       <div class="favorite-recipe">
         <div class="d-flex mt-3">
           <h3 class="mt-1">Favorite Recipes:</h3>
         </div>
-        <div class="card-wrapper" id="favorite-recipes">
-          <template>
-            <div class="food-card">
-              <img class="card-img" id="recipe-image" src="" alt="" height="120px" width="120px">
-              <h5 class="card-title" id="recipe-title"></h5>
-              <div class="trash">
-                <img class="mb-2 trash-icon" id="delete-favorite" src="../public/images/trash.png" alt="" height="25px"
-                  width="25px">
-              </div>
+        <template>
+          <div class="food-card">
+            <img class="card-img" id="recipe-image" src="" alt="" height="120px" width="120px">
+            <h5 class="card-title" id="recipe-title"></h5>
+            <div class="trash">
+              <img class="mb-2 trash-icon" id="delete-favorite" src="../public/images/trash.png" alt="" height="25px"
+                width="25px">
             </div>
-          </template>
+          </div>
+        </template>
+        <div class="card-wrapper" id="favorite-recipes">
         </div>
       </div>
       <div class="shopping-cart">
@@ -70,21 +81,19 @@
             <button id="ingredient-submit">Add</button>
           </div>
         </div>
-        <div id="cart" class="card-wrapper">
-          <template>
-            <div class="food-card">
-              <img id="cart-item-img" class="card-img" src="../public/images/Butter.jpeg" alt="" width="120px"
-                height="120px">
-              <div class="wrapper">
-                <h5 id="cart-item-title" class="card-title">Butter</h5>
-                <p id="cart-item-amount" class="card-text">2 Tbsp</p>
-              </div>
-              <div class="trash">
-                <img class="mb-2 trash-icon" id="delete-cart" src="../public/images/trash.png" alt="" height="25px"
-                  width="25px">
-              </div>
+        <template>
+          <div class="food-card">
+            <div class="wrapper cart-wrapper">
+              <h5 id="cart-item-title" class="card-title"></h5>
+              <p id="cart-item-amount" class="card-text"></p>
             </div>
-          </template>
+            <div class="trash">
+              <img class="mb-2 trash-icon" id="delete-cart" src="../public/images/trash.png" alt="" height="25px"
+                width="25px">
+            </div>
+          </div>
+        </template>
+        <div id="cart" class="card-wrapper">
         </div>
       </div>
 

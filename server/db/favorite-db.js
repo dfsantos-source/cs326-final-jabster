@@ -11,6 +11,13 @@ export const getFavorites = async (userId) => {
     return res.rows
 }
 
+export const hasFavorite = async (userId, body) => {
+    const { postId } = body
+    const queryText = "SELECT * FROM User_Favorites WHERE userId = $1 AND postId = $2"
+    const res = await client.query(queryText, [userId, postId])
+    return res.rows
+}
+
 export const addFavorites = async (userId, body) => {
     const { postId } = body
     const queryText = "INSERT INTO User_Favorites (userId, postId) VALUES ($1, $2) RETURNING *"
@@ -18,8 +25,8 @@ export const addFavorites = async (userId, body) => {
     return res.rows
 }
 
-export const deleteFavorite = async (postId) => {
+export const deleteFavorite = async (favoriteId) => {
     const queryText = "DELETE FROM User_Favorites WHERE id = $1"
-    const res = await client.query(queryText, [postId])
+    const res = await client.query(queryText, [favoriteId])
     return res.rows
 }

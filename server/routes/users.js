@@ -7,16 +7,17 @@ const router = express.Router()
 router.post('/register', async (req, res) => {
     const body = req.body
 
-    try {
+    if (body !== undefined) {
+        console.log("yo")
         const user = await userQueries.registerUser(body)
         res.status(200).json(user)
-
-    } catch (error) {
-        res.status(400).json(error)
+    }
+    else {
+        res.status(400).json({ error: "error registering" })
     }
 })
 
-router.get("/get/:userId", async (req, res) => {
+router.get("/get/user", async (req, res) => {
     try {
         const userId = req.user.id
         const user = await userQueries.findUserById(userId)
@@ -27,10 +28,9 @@ router.get("/get/:userId", async (req, res) => {
     }
 })
 
-router.put('/update/:userId', async (req, res) => {
-    let id = req.user.userId;
+router.put('/update/user', async (req, res) => {
+    let id = req.user.id;
     const body = req.body;
-
     try {
         if (body.username !== undefined) {
             const newUser = await userQueries.updateName(id, body)

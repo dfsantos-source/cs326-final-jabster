@@ -2,7 +2,7 @@ import client from "./db.js";
 
 const getCart = async (userId) => {
     const queryText = `
-        SELECT * FROM Cart_Item WHERE id=($1)
+        SELECT * FROM Cart_Item WHERE userId=($1)
     `;
     const res = await client.query(queryText, [userId]);
     return res.rows;

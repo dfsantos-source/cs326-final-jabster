@@ -43,6 +43,7 @@
   margin-left: 3em;
   border-radius: 20px;
 }
+
 .user-info {
   height: 35em;
   text-align: center;
@@ -99,9 +100,14 @@
 .card-wrapper {
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
+  row-gap: 1em;
   margin-top: 1em;
 }
 
 .card-text {
   margin-top: -0.3em;
+}
+
+.cart-wrapper {
+  padding-top: 30%;
 }

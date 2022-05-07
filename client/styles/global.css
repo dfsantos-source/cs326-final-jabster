@@ -7,16 +7,17 @@
   font-weight: 600;
 }
 
-.navbar > div {
+.navbar>div {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.navbar > div > *:not(:first-child) {
+.navbar>div>*:not(:first-child) {
   margin-left: 20px;
 }
 
-.link:hover {
-  color: #666565;
+.navbar>div>a {
+  text-decoration: none;
+  color: black;
 }

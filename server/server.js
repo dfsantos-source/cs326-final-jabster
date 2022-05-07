@@ -5,7 +5,7 @@ import posts from './routes/posts.js'
 import users from './routes/users.js'
 import express from 'express'
 import client from './db/db.js'
-import {registerUser} from './db/users-db.js';
+import { registerUser } from './db/users-db.js';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import expressSession from 'express-session';
@@ -24,8 +24,8 @@ const sessionConfig = {
 
 const app = express()
 const port = process.env.PORT || 3000;
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.json({ limit: '50mb' }));
+app.use(express.urlencoded({ extended: false, limit: '50mb' }));
 app.use(expressSession(sessionConfig));
 app.use(logger('dev'));
 auth.configure(app);
@@ -58,11 +58,31 @@ app.get('/login', (req, res) =>
   // res.sendFile('client/html/login.html', { root: __dirname })
 );
 
+app.get('/all-posts', checkLoggedIn, (req, res) => {
+  res.redirect('/client/html/posts.html')
+})
+
+app.get('/my-posts', checkLoggedIn, (req, res) => {
+  res.redirect('/client/html/my-posts.html')
+})
+
+app.get('/create-post', checkLoggedIn, (req, res) => {
+  res.redirect('/client/html/create-post.html')
+})
+
+app.get('/profile', checkLoggedIn, (req, res) => {
+  res.redirect('/client/html/user-profile.html')
+})
+
 // Handle the URL /login (just output the login.html file).
-app.get('/homepage', (req, res) =>
+app.get('/homepage', checkLoggedIn, (req, res) =>
   res.redirect('/client/html/grubify.html')
   // res.sendFile('client/html/grubify.html', { root: __dirname })
 );
+
+app.get('/home', checkLoggedIn, (req, res) => {
+  res.redirect('/client/html/index.html')
+})
 
 // Handle post data from the login.html form.
 app.post(
@@ -84,18 +104,18 @@ app.get('/logout', (req, res) => {
 // If we successfully add a new user, go to /login, else, back to /register.
 // Use req.body to access data (as in, req.body['username']).
 // Use res.redirect to change URLs.
-app.post('/register', (req, res) => {
-  const { username, password } = req.body;
-  if (registerUser(username, password)) {
-    res.redirect('/login');
-  } else {
-    res.redirect('/register');
-  }
-});
+// app.post('/register', (req, res) => {
+//   const { username, password } = req.body;
+//   if (registerUser(username, password)) {
+//     res.redirect('/login');
+//   } else {
+//     res.redirect('/register');
+//   }
+// });
 
 // Register URL
 app.get('/register', (req, res) =>
-  res.sendFile('client/register.html', { root: __dirname })
+  res.redirect('/client/html/register.html')
 );
 
 // // Private data
