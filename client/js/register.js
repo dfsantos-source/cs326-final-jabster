@@ -22,7 +22,7 @@ document.getElementById('register_button').addEventListener('click', async (e) =
     const status = await res.status;
 
     if (status === 200) {
-        window.location.href = "/client/html/grubify.html";
+        window.location.href = "/client/html/login.html";
     }
     else {
         window.location.href = "/client/html/register.html"
