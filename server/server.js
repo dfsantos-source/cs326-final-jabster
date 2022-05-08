@@ -31,10 +31,10 @@ app.use(logger('dev'));
 auth.configure(app);
 
 app.use('/client', express.static('client'));
-app.use('/posts', posts)
-app.use('/user', users)
-app.use('/user/favorites', favorites)
-app.use('/user/cart', cart)
+app.use('/posts', posts);
+app.use('/user', users);
+app.use('/user/favorites', favorites);
+app.use('/user/cart', cart);
 
 // user routes
 // Our own middleware to check if the user is authenticated
@@ -100,55 +100,11 @@ app.get('/logout', (req, res) => {
   res.redirect('/login'); // back to login
 });
 
-// Like login, but add a new user and password IFF one doesn't exist already.
-// If we successfully add a new user, go to /login, else, back to /register.
-// Use req.body to access data (as in, req.body['username']).
-// Use res.redirect to change URLs.
-// app.post('/register', (req, res) => {
-//   const { username, password } = req.body;
-//   if (registerUser(username, password)) {
-//     res.redirect('/login');
-//   } else {
-//     res.redirect('/register');
-//   }
-// });
 
 // Register URL
 app.get('/register', (req, res) =>
   res.redirect('/client/html/register.html')
 );
-
-// // Private data
-// app.get(
-//   '/private',
-//   checkLoggedIn, // If we are logged in (notice the comma!)...
-//   (req, res) => {
-//     // Go to the user's page.
-//     res.redirect('/homepage')
-//     // res.redirect('/private/' + req.user);
-//   }
-// );
-
-// // A dummy page for the user.
-// app.get(
-//   '/private/:userID/',
-//   checkLoggedIn, // We also protect this route: authenticated...
-//   (req, res) => {
-//     // Verify this is the right user.
-//     if (req.params.userID === req.user) {
-//       res.writeHead(200, { 'Content-Type': 'text/html' });
-//       res.write('<H1>HELLO ' + req.params.userID + '</H1>');
-//       res.write('<br/><a href="/logout">click here to logout</a>');
-//       res.end();
-//     } else {
-//       res.redirect('/private/');
-//     }
-//   }
-// );
-
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

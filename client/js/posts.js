@@ -4,15 +4,15 @@ async function likePost(data) {
         headers: {
             'Content-Type': 'application/json',
         },
-    })
-    const dataRes = await response.json()
-    const stat = await response.status
+    });
+    const dataRes = await response.json();
+    const stat = await response.status;
     if (stat === 400) {
-        alert("You have already liked this post")
+        alert("You have already liked this post");
     }
     if (stat === 200) {
         renderPage()
-        alert("You have successfully liked the post")
+        alert("You have successfully liked the post");
     }
 }
 
@@ -22,20 +22,19 @@ async function dislikePost(data) {
         headers: {
             'Content-Type': 'application/json',
         },
-    })
-    const dataRes = await response.json()
-    const stat = await response.status
+    });
+    const dataRes = await response.json();
+    const stat = await response.status;
     if (stat === 400) {
-        alert("You have already disliked this post")
+        alert("You have already disliked this post");
     }
     if (stat === 200) {
-        renderPage()
-        alert("You have successfully disliked the post")
+        renderPage();
+        alert("You have successfully disliked the post");
     }
 }
 
 async function favoritePost(data) {
-    console.log(data.id)
     const response = await fetch(`/user/favorites/user/add`, {
         method: "POST",
         headers: {
@@ -46,12 +45,11 @@ async function favoritePost(data) {
     const dataRes = await response.json()
     const stat = await response.status
     if (stat === 400) {
-        alert("You have already favorited this post")
+        alert("You have already favorited this post");
     }
     if (stat === 200) {
-        alert("Successfully favorited post")
+        alert("Successfully favorited post");
     }
-    console.log(dataRes)
 }
 
 const addPost = (data) => {
@@ -69,12 +67,12 @@ const addPost = (data) => {
     ingredients.forEach(ingredient => {
         const li = document.createElement('li');
         li.innerText = ingredient;
-        ingredientsList.appendChild(li)
-    })
+        ingredientsList.appendChild(li);
+    });
     directions.forEach(direction => {
         const li = document.createElement('li');
         li.innerText = direction;
-        directionsList.appendChild(li)
+        directionsList.appendChild(li);
     })
     clon.getElementById('like-button').addEventListener("click", (event) => { likePost(data) })
     clon.getElementById('dislike-button').addEventListener("click", (event) => { dislikePost(data) })
@@ -97,16 +95,15 @@ async function renderPage() {
             'Content-Type': 'application/json',
         },
     })
-    const data = await res.json()
-    const status = await res.status
+    const data = await res.json();
+    const status = await res.status;
 
-    console.log(res)
 
     if (status === 200) {
         data.forEach(post => {
-            addPost(post)
+            addPost(post);
         })
     }
 }
 
-renderPage()
+renderPage();

@@ -21,7 +21,6 @@ router.get('/user/get', async (req, res) => {
 router.post('/user/add', async (req, res) => {
     const id = req.user.id;
     const body = req.body;
-    console.log(body)
     if (body !== undefined) {
         const hasFav = await favoriteQueries.hasFavorite(id, body)
         if (hasFav.length > 0) {

@@ -9,14 +9,13 @@ async function deleteFavorite(data) {
             headers: {
                 'Content-Type': 'application/json',
             },
-        })
-        const dataRes = await response.json()
-        console.log(dataRes)
-        const stat = await response.status
+        });
+        const dataRes = await response.json();
+        const stat = await response.status;
 
         if (stat === 200) {
-            renderPage()
-            alert("Successfully deleted favorite")
+            renderPage();
+            alert("Successfully deleted favorite");
         }
     }
 }
@@ -28,14 +27,13 @@ async function deleteCart(data) {
             headers: {
                 'Content-Type': 'application/json',
             },
-        })
-        const dataRes = await response.json()
-        console.log(dataRes)
-        const stat = await response.status
+        });
+        const dataRes = await response.json();
+        const stat = await response.status;
 
         if (stat === 200) {
-            renderPage()
-            alert("Successfully deleted cart")
+            renderPage();
+            alert("Successfully deleted cart");
         }
     }
 }
@@ -46,7 +44,7 @@ const addFavorite = (data) => {
     const clon = temp.content.cloneNode(true);
     clon.getElementById('recipe-title').innerText = data.name;
     clon.getElementById('recipe-image').src = 'data:image/png;base64,' + data.image;
-    clon.getElementById('delete-favorite').addEventListener("click", (event) => { deleteFavorite(data) })
+    clon.getElementById('delete-favorite').addEventListener("click", (event) => { deleteFavorite(data) });
     favorites.appendChild(clon);
 }
 
@@ -66,13 +64,12 @@ async function addCartSubmit(ingredient, amount) {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({ name: ingredient, amount: amount })
-    })
-    const dataRes = await response.json()
-    console.log(dataRes)
-    document.getElementById('ingredient-name-add').value = ""
-    document.getElementById('ingredient-amount-add').value = ""
-    document.getElementById('ingredient-form').style.display = 'none'
-    renderPage()
+    });
+    const dataRes = await response.json();
+    document.getElementById('ingredient-name-add').value = "";
+    document.getElementById('ingredient-amount-add').value = "";
+    document.getElementById('ingredient-form').style.display = 'none';
+    renderPage();
 
 }
 
@@ -98,51 +95,51 @@ const userInfoRes = await fetch('/user/get/user', {
     },
 });
 
-const userdata = await userInfoRes.json()
-const userInfo = userdata[0]
+const userdata = await userInfoRes.json();
+const userInfo = userdata[0];
 
-document.getElementById('name').innerText = userInfo.name
-document.getElementById('username').innerText = "@" + userInfo.username
+document.getElementById('name').innerText = userInfo.name;
+document.getElementById('username').innerText = "@" + userInfo.username;
 
 
 const renderPage = async () => {
-    cart.innerHTML = ''
-    favorites.innerHTML = ''
+    cart.innerHTML = '';
+    favorites.innerHTML = '';
     const res = await fetch('/user/favorites/user/get', {
         method: "GET",
         headers: {
             'Content-Type': 'application/json',
         },
-    })
+    });
 
     const res2 = await fetch('/user/cart/user/get', {
         method: "GET",
         headers: {
             'Content-Type': 'application/json',
         },
-    })
+    });
 
-    const data = await res.json()
-    const status = await res.status
+    const data = await res.json();
+    const status = await res.status;
 
-    const data2 = await res2.json()
-    const status2 = await res2.status
+    const data2 = await res2.json();
+    const status2 = await res2.status;
 
     // console.log(data)
     // console.log(data2)
 
     if (status === 200) {
         data.forEach(dish => {
-            addFavorite(dish)
+            addFavorite(dish);
         })
     }
 
 
     if (status2 === 200) {
         data2.forEach(ingredient => {
-            addCart(ingredient)
+            addCart(ingredient);
         })
     }
 }
 
-renderPage()
+renderPage();

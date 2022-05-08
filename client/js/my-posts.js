@@ -2,12 +2,11 @@ let data;
 
 function renderData() {
     data.forEach(post => {
-        addPost(post)
+        addPost(post);
     })
 }
 
 async function deletePost(data) {
-    console.log(data.id)
     if (confirm("ARE YOU SURE YOU WANT TO DELETE!") === true) {
         const response = await fetch(`/posts/delete/${data.id}`, {
             method: "DELETE",
@@ -15,29 +14,19 @@ async function deletePost(data) {
                 'Content-Type': 'application/json',
             },
         })
-        const dataRes = await response.json()
-        const stat = await response.status
+        const dataRes = await response.json();
+        const stat = await response.status;
 
         if (stat === 200) {
-            renderPage()
-            alert("Successfully deleted post")
+            renderPage();
+            alert("Successfully deleted post");
         }
-        console.log(dataRes)
-
     }
 }
 
 async function updatePost(data) {
     window.localStorage.setItem('update-id', data.id);
-    window.location.href = 'update-post.html'
-    // const response = await fetch(`/posts/update/${data.id}`, {
-    //     method: "PUT",
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    // })
-    // const dataRes = await response.json()
-    // console.log(dataRes)
+    window.location.href = 'update-post.html';
 }
 
 const addPost = (data) => {
@@ -55,15 +44,15 @@ const addPost = (data) => {
     ingredients.forEach(ingredient => {
         const li = document.createElement('li');
         li.innerText = ingredient;
-        ingredientsList.appendChild(li)
+        ingredientsList.appendChild(li);
     })
     directions.forEach(direction => {
         const li = document.createElement('li');
         li.innerText = direction;
-        directionsList.appendChild(li)
+        directionsList.appendChild(li);
     })
-    clon.getElementById('update-button').addEventListener("click", (event) => { updatePost(data) })
-    clon.getElementById('delete-button').addEventListener("click", (event) => { deletePost(data) })
+    clon.getElementById('update-button').addEventListener("click", (event) => { updatePost(data) });
+    clon.getElementById('delete-button').addEventListener("click", (event) => { deletePost(data) });
     clon.getElementById('post-template-likes').innerText = 'Likes: ' + data.likes;
     clon.getElementById('post-template-dislikes').innerText = 'Dislikes: ' + data.dislikes;
     posts.appendChild(clon);
@@ -81,14 +70,14 @@ async function renderPage() {
         },
     })
 
-    data = await res.json()
-    const status = await res.status
+    data = await res.json();
+    const status = await res.status;
 
 
 
     if (status === 200) {
-        renderData()
+        renderData();
     }
 }
 
-renderPage()
+renderPage();

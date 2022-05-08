@@ -1,7 +1,7 @@
 const posts = document.getElementById("grubify-post");
 
 const addPost = (data) => {
-    posts.innerHTML = ""
+    posts.innerHTML = "";
     const temp = document.getElementsByTagName("template")[0];
     const clon = temp.content.cloneNode(true);
     clon.getElementById('grub-post-template-title').innerText = data.name;
@@ -21,7 +21,7 @@ const addPost = (data) => {
     directions.forEach(direction => {
         const li = document.createElement('li');
         li.innerText = direction;
-        directionsList.appendChild(li)
+        directionsList.appendChild(li);
     })
     clon.getElementById('grub-post-template-likes').innerText = 'Likes: ' + data.likes;
     clon.getElementById('grub-post-template-dislikes').innerText = 'Dislikes: ' + data.dislikes;
@@ -32,15 +32,15 @@ const addPost = (data) => {
             headers: {
                 'Content-Type': 'application/json',
             },
-        })
+        });
         const newData = await res.json();
         const status = await res.status;
         if (status === 400) {
-            alert("You have already liked this post")
+            alert("You have already liked this post");
         }
         if (status === 200) {
             renderSamePost(data);
-            alert("You have successfully liked the post")
+            alert("You have successfully liked the post");
         }
     })
 
@@ -71,19 +71,17 @@ async function renderSamePost(data) {
         headers: {
             'Content-Type': 'application/json',
         },
-    })
-    const resData = await res.json()
-    const postData = resData[0]
-    postData.ingredients = postData.ingredients.split(', ')
-    postData.directions = postData.directions.split(". ")
-    console.log(postData)
-    addPost(postData)
+    });
+    const resData = await res.json();
+    const postData = resData[0];
+    postData.ingredients = postData.ingredients.split(', ');
+    postData.directions = postData.directions.split(". ");
+    addPost(postData);
 }
 
 document.getElementById('grubify-butt').addEventListener('click', async (e) => {
     const dietary_tag = document.getElementById('diet-select').value;
     const cuisine_tag = document.getElementById('cuisine-select').value;
-    console.log(cuisine_tag)
 
     document.getElementById('title').innerText = "Not in the Mood?";
     document.getElementById('grubify-butt').innerHTML = "Grubify Again!";
@@ -91,21 +89,20 @@ document.getElementById('grubify-butt').addEventListener('click', async (e) => {
     const body = {
         tag: dietary_tag,
         cuisine: cuisine_tag
-    }
+    };
     const res = await fetch(`/posts/get/random/${body.tag}&${body.cuisine}`, {
         method: "GET",
         headers: {
             'Content-Type': 'application/json',
         },
-    })
+    });
 
     const data = await res.json().catch((err) => alert("No results found, try again"));
 
     data.ingredients = data.ingredients.split(', ');
-    data.directions = data.directions.split('.')
+    data.directions = data.directions.split('.');
     const status = await res.status;
-    console.log(data)
     if (status === 200) {
         addPost(data);
-    }
+    };
 })

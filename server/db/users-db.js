@@ -6,18 +6,6 @@ export const registerUser = async (body) => {
     return res.rows
 }
 
-export const updatePassword = async (userId, body) => {
-    const queryText = "UPDATE Users SET password = $1 WHERE id = $2 RETURNING *"
-    const res = await client.query(queryText, [body.password, userId])
-    return res.rows
-}
-
-export const updateName = async (userId, body) => {
-    const queryText = "UPDATE Users SET username = $1 WHERE id = $2 RETURNING *"
-    const res = await client.query(queryText, [body.username, userId])
-    return res.rows
-}
-
 export const findUserById = async (id) => {
     const queryText = 'SELECT * FROM Users WHERE id = $1'
 

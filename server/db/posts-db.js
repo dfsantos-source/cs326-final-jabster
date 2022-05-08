@@ -29,67 +29,67 @@ export const deletePost = async (postId) => {
 
 export const getAllPosts = async () => {
     const queryText = "SELECT * FROM Recipe_Posts ORDER BY id desc";
-    const res = await client.query(queryText)
-    return res.rows
+    const res = await client.query(queryText);
+    return res.rows;
 }
 
 export const getUserPosts = async (userId) => {
     const queryText = "SELECT * FROM Recipe_Posts WHERE userId = ($1) Order by id desc";
     const res = await client.query(queryText, [userId]);
-    return res.rows
+    return res.rows;
 }
 
 export const getRandomPost = async (body) => {
     if (body.tag === "none" && body.cuisine === "none") {
-        const queryText = "SELECT * FROM Recipe_Posts"
-        const res = await client.query(queryText)
-        return res.rows
+        const queryText = "SELECT * FROM Recipe_Posts";
+        const res = await client.query(queryText);
+        return res.rows;
     }
     else if (body.tag === "none" && body.cuisine !== "none") {
-        const queryText = "SELECT * FROM Recipe_Posts WHERE cuisine = $1"
-        const res = await client.query(queryText, [body.cuisine])
-        return res.rows
+        const queryText = "SELECT * FROM Recipe_Posts WHERE cuisine = $1";
+        const res = await client.query(queryText, [body.cuisine]);
+        return res.rows;
     }
     else if (body.tag !== "none" && body.cuisine === "none") {
-        const queryText = "SELECT * FROM Recipe_Posts WHERE tag = $1"
-        const res = await client.query(queryText, [body.tag])
-        return res.rows
+        const queryText = "SELECT * FROM Recipe_Posts WHERE tag = $1";
+        const res = await client.query(queryText, [body.tag]);
+        return res.rows;
     }
     else {
-        const queryText = "SELECT * FROM Recipe_Posts WHERE tag = $1 AND cuisine = $2"
-        const res = await client.query(queryText, [body.tag, body.cuisine])
-        return res.rows
+        const queryText = "SELECT * FROM Recipe_Posts WHERE tag = $1 AND cuisine = $2";
+        const res = await client.query(queryText, [body.tag, body.cuisine]);
+        return res.rows;
     }
 }
 
 export const getPostbyId = async (postId) => {
-    const queryText = "SELECT * FROM Recipe_Posts WHERE id = ($1)"
+    const queryText = "SELECT * FROM Recipe_Posts WHERE id = ($1)";
     const res = await client.query(queryText, [postId]);
-    return res.rows
+    return res.rows;
 }
 
 export const likePost = async (postId) => {
-    const queryText = "UPDATE Recipe_Posts SET likes = likes + 1 WHERE id = ($1)"
+    const queryText = "UPDATE Recipe_Posts SET likes = likes + 1 WHERE id = ($1)";
     const res = await client.query(queryText, [postId]);
-    return res.rows
+    return res.rows;
 }
 
 export const dislikePost = async (postId) => {
-    const queryText = "UPDATE Recipe_Posts SET dislikes = dislikes + 1 WHERE id = ($1)"
+    const queryText = "UPDATE Recipe_Posts SET dislikes = dislikes + 1 WHERE id = ($1)";
     const res = await client.query(queryText, [postId]);
-    return res.rows
+    return res.rows;
 }
 
 export const addUserLikes = async (userId, postId) => {
-    const queryText = "INSERT INTO User_Likes(userId, postId) VALUES ($1, $2) "
+    const queryText = "INSERT INTO User_Likes(userId, postId) VALUES ($1, $2) ";
     const res = await client.query(queryText, [userId, postId]);
-    return res.rows
+    return res.rows;
 }
 
 export const addUserDislikes = async (userId, postId) => {
-    const queryText = "INSERT INTO User_Dislikes(userId, postId) VALUES ($1, $2) "
+    const queryText = "INSERT INTO User_Dislikes(userId, postId) VALUES ($1, $2) ";
     const res = await client.query(queryText, [userId, postId]);
-    return res.rows
+    return res.rows;
 }
 
 export const getUserLikes = async (userId, postId) => {

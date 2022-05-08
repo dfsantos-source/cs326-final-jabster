@@ -4,13 +4,10 @@ const imageUploaded = () => {
         'input[type=file]')['files'][0];
 
     var reader = new FileReader();
-    console.log("next");
 
     reader.onload = function () {
         base64String = reader.result.replace("data:", "")
             .replace(/^.+,/, "");
-
-        console.log(base64String);
     }
     reader.readAsDataURL(file);
 }
@@ -37,17 +34,15 @@ document.getElementById('post').addEventListener('click', async (e) => {
         image: image
     }
 
-    console.log(post)
-
     const res = await fetch('/posts/create', {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(post)
-    })
-    const data = await res.json()
-    const status = await res.status
+    });
+    const data = await res.json();
+    const status = await res.status;
 
     if (status === 200) {
         window.location.href = "my-posts.html";
