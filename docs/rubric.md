@@ -3,7 +3,7 @@
    - (15 points) Users can get a random post based on diet restriction and cuisine on grubify page 
    - (10 points) Users can create recipe posts
    - (15 points) Users can read, update, and delete their own posts 
-   - (10 points) Users can like and dislike posts
+   - (5 points) Users can like and dislike posts
    - (5 points) Users can favorite a post
    - (5 points) Users can favorite a post
    - (5 points) Users can read other users posts 
