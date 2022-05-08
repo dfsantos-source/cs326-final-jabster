@@ -11,7 +11,7 @@ Our app is a social media app about Food Recipes. Users are able to make posts a
  Aayush Bhagat (Github: Aayush-Bhagat)  
  Dane Santos (Github: dfsantos-source)  
  Ali Rabeea (Github: alirabeea)  
- Nolan LaRochelle (Github: LaRochelleNolan) 
+ Nolan LaRochelle (Github: LaRochelleNolan)  
 
  # Grading Rubric
   - (15 points) Users can login and register
