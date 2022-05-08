@@ -60,10 +60,11 @@ Table to keep all of the recipe posts a User has favorited
 
 # Division of Labor
 
-#### Aayush:
-
-#### Dane:
-
-#### Ali: 
-
-#### Nolan:
+#### Aayush Bhagat: 
+ Created and intialized database with express backend, user favorites SQL queries and endpoints, User Authentication with Passportjs with Dane, Fixed server bugs, Fixed user profile page integration with backend with Dane.
+#### Dane Santos:
+Iitialized database with tables and schema, user shopping cart item Sql queries and endpoints, User Authentication with Passportjs with Aayush, Fixed server bugs, Fixed user profile page integration with backend with Aayush, implemented image base 64 processing.
+#### Ali Rabeea:
+ User register query database, tested backend endpoints with SQL queries and fixed any bugs with queries. Implemented create post, posts, my posts, and update posts page integration with server.
+#### Nolan LaRochelle:
+Implemented Recipe post SQL queries and recipe post backend endpoints, fixed and tested post queries and endpoints, implmented and fixed integration to backend for grubify and register pages. 

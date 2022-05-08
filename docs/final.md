@@ -1,5 +1,7 @@
 # Title: Team 10 Jabster
 
+# Link: https://grubify-deployment.herokuapp.com/
+
 # Subtitle: Guess my Grub
 # Semester: Spring 2022
 # Overview: 
@@ -284,9 +286,13 @@ email: string
 # Division of Labor: 
 
 #### Aayush Bhagat: 
+Designed Recipe and user profile page wireframe and implemented html/css for those pages. Did user and cart item api endpoints. Implemented update posts and my-post.html page for the  front end html and js. Created and intialized database with express backend, user favorites SQL queries and endpoints, User Authentication with Passportjs with Dane, Fixed server bugs, Fixed user profile page integration with backend with Dane.
 #### Dane Santos:
+Designed Grubify filter page wireframe and implemented html/css for those pages. Extensively debugged and fixed Heroku configuration and deployment. Created and worked on frontend implementation for like and dislike on posts.html, fetched and rendered posts on posts.html, add to cart handlers and fetch calls on user-profile.html. Iitialized database with tables and schema, user shopping cart item Sql queries and endpoints, User Authentication with Passportjs with Aayush, Fixed server bugs, Fixed user profile page integration with backend with Aayush, implemented image base 64 processing.
 #### Ali Rabeea:
+Designed Login and Register page wireframes and implemented html/css for those pages. Heroku deployment, backend skeleton code for favorites, refactored profile favorites, frontend implementation for favorite post, delete cart and delete favorite from profile page. User register query database, tested backend endpoints with SQL queries and fixed any bugs with queries. Implemented create post, posts, my posts, and update posts page integration with server.
 #### Nolan LaRochelle:
+Designed Homepage wireframe and implemented html/css for those pages. Handled server endpoints in the backend for getting a random post, getting a specific post based of an id, as well as liking and disliking a post. Also handled the front end the front end javascript for the register page as well as the grubify page.  Implemented Recipe post SQL queries and recipe post backend endpoints, fixed and tested post queries and endpoints, implmented and fixed integration to backend for grubify and register pages. 
 
 # Conclusion: 
 Our team has really enjoyed creating this web app throughout the semester, we have enjoyed working as a team together and really liked the project we created. We have learned a lot through implementing and designing this app. We learned a lot about creating our own api and how to design a larger scale api that makes it easy to call endpoints in the frontend. We also learned a lot about SQL through making this app, as we learned how relations work in SQL tables and wee learned SQL queries that allows us to read, update, create , and delete data from the database, we also lerned how to use joins in SQL. The biggest difficulty that we had with this projecct is integrating the front end and backend together. There were a lot of small parts in our application that we needed to integrate such as user likes, that took a while as we would get bugs and didn't know if it was a backend or frontend problem. Our team would have liked to know SQL queries before we began this project, as we had a lot of bugs from our SQL queries when we were setting up the database and also testing the database.
