@@ -11,7 +11,22 @@ Our app is a social media app about Food Recipes. Users are able to make posts a
  Aayush Bhagat (Github: Aayush-Bhagat)  
  Dane Santos (Github: dfsantos-source)  
  Ali Rabeea (Github: alirabeea)  
- Nolan LaRochelle (Github: LaRochelleNolan)  
+ Nolan LaRochelle (Github: LaRochelleNolan) 
+
+ # Grading Rubric
+  - (15 points) Users can login and register
+   - (15 points) Users can get a random post based on diet restriction and cuisine on grubify page 
+   - (10 points) Users can create recipe posts
+   - (15 points) Users can read, update, and delete their own posts 
+   - (10 points) Users can like and dislike posts
+   - (5 points) Users can favorite a post
+   - (5 points) Users can favorite a post
+   - (5 points) Users can read other users posts 
+   - (5 points) Users can add items to their shopping cart 
+   - (5 points) Users can delete items from their shopping cart
+   - (5 points) Users can remove favorites
+   - (5 points) Users can upload an image from their computer to create a post
+   - (5 points) Users should not be able to like/dislike and favorite a post more than once 
 
 # User Interface: 
 
